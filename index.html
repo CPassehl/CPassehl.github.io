@@ -1,5 +1,6 @@
 <html>
-<head> <link href='http://fonts.googleapis.com/css?family=Inconsolata:400'  rel='stylesheet' type='text/css'> </head>     
+<head> <link href='http://fonts.googleapis.com/css?family=Inconsolata:400'  rel='stylesheet' type='text/css'>
+</head>     
      <body style='
     font-family:courier;
     margin: 3em;
@@ -9,6 +10,27 @@
     letter-spacing: normal;
     color: red;
 '>
+          <style>
+		.circle {
+			width: 20px; height: 20px;
+			border-radius: 50%;
+			float:left;
+			    }  
+			.red {
+				background-color: red;
+
+			}
+			.blue {
+				background-color: blue;
+				width: 60px; height:60px;
+				animation-name: example;
+    			animation-duration: 4s;
+			}  
+	
+			@keyframes example {
+    			50%    {float:right; }
+			}
+	</style>
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
  <script type="text/p5">
      function setup() {
@@ -25,11 +47,22 @@
      console.log("the value of x is", x);
      alert ("if Alec, Shaunalynn, Molly or Bakhtair see this, value of x is 10");
      </script>
-  <script >
-     var b = blue;
-     console.log("the value of b is", b);
-     alert ("if Alec, Shaunalynn, Molly or Bakhtair see this, value of b is blue");
-     </script>    
+<script>
+// task 1 rewrite  circle div with specific command /
+for (var circ = 0; circ < 500; circ++) { 
+	var div = document.createElement("div");
+	div.classList.add("circle");
+	div.classList.add("red");
+	document.body.appendChild(div);
+}
+for (var circ = 0; circ < 500; circ++) { 
+	var div = document.createElement("div");
+	div.classList.add("circle");
+	div.classList.add("blue");
+	div.style.height="80px";
+	div.style.transform= "rotate(7deg)"; 
+	document.body.appendChild(div);
+}   
 
      <img src=" CPassehl.github.io/color.study1.jpg " alt="clr" id="colorispop" style="width:80%; height:20%;"/>
      
@@ -45,7 +78,7 @@
   <img src=' CPassehl.github.io/photocompile1.gif  'style='width: 100%' > 
   <br><br>
    <img src=' CPassehl.github.io/photocompile1.gif  'style='width: 100%' > 
-  <br><br>  <br><br>
+  <br><br>  
   
 <div class="Friday.8" style="width:100%; background-color:b7ccc1;">
     <h6 style="color:black;"> christopher<br>   <hr style="transform:rotate(90deg); width:100px;">         passehl    <br><br>|||-------------◊ı. What did you accomplish today?</h6> 
