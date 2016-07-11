@@ -9,6 +9,26 @@
     letter-spacing: normal;
     color: red;
 '>
+<style>   	.circle {
+			width: 20px; height: 20px;
+			border-radius: 50%;
+			float:left;
+			    }  
+			.red {
+				background-color: red;
+
+			}
+			.blue {
+				background-color: blue;
+				width: 60px; height:60px;
+				animation-name: example;
+    			animation-duration: 4s;
+			}  
+	
+			@keyframes example {
+    			50%    {float:right; }
+			}
+			</style>  
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
  <script type="text/p5">
      function setup() {
