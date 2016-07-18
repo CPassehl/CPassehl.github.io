@@ -22,6 +22,105 @@
  	#hug {float: left; width: 100px; background-color: #d2cfb3; border-style: solid; border-color: black; border-width: 3px; margin: 2px;}
 	#hit {float: right; width: 100px; background-color: #d2cfb3; border-style: solid; border-color: black; border-width: 3px; margin: 2px;}
 </style> 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input > Velocity</title>
+</head>
+<body>
+    <script>
+    // This global variable will make the current value of "input" accessible ANYWHERE in your program.
+    var input;
+    function generateInput() {
+        // Write your code here! This function can do anything you want, but should ultimately return the value you want to affect the page's background color. Right now, it is just returning a random number between 0 and 1.
+        input = Math.random();
+        return input;
+    }
+    // This function, when run, will generate a random number between the two numbers passed to it as arguments.
+    function generateRandomNumberBetween(max, min) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    // Define a new function which, when run, will create a circle of a given radius
+    
+
+    var Circle = function(radius) { 
+        
+        // store the radius we're given
+        this.radius = radius; 
+        // create the div that we're going to use to display the circle
+        this.div = document.createElement('div'); 
+        // set its width 
+        this.div.style.width = .5 * radius + 'px'; 
+        // and height to twice our radius
+        this.div.style.height = .5 * radius + 'px';         
+        // set its border-radius to 50% to make a circle
+        this.div.style.borderRadius = '50%'; 
+        // position it absolutely
+        this.div.style.position = 'absolute';
+        this.div.style.display = 'inline';         // so that we can choose a random % left
+        this.div.style.left = Math.floor(Math.random() * 100) + "%"; 
+
+        // and then a top to place it
+        this.div.style.top = Math.floor(Math.random() * 0) + "%"; 
+        // choose a random number 0 -> 255 for red, green, and blue values
+        var red = Math.floor(Math.random() * 0);
+        var green = Math.floor(Math.random() * 0);
+        var blue = Math.floor(Math.random() * 255);
+        // and set the background color to that random RGB triplet
+        this.div.style.backgroundColor = 'rgba(' + [red, green, blue].join(',') + ',.8)'; 
+        // set a transition so they will appear to move smoothly
+        this.div.style.transition = '1s';
+        // and then draw a border, just for style
+        this.div.style.border = 'solid 0px black';
+        // finally, stick the div we've created in our page;
+        document.body.appendChild(this.div); 
+    };
+    // Now, in order to actually make some circles:
+    // First, make an empty array to hold all my Circles
+    var myCircles = []; 
+    // Now, make 100 of them 
+    
+
+   
+
+    function drawCircles() {
+    for (var i = 0; i < 10; i++) { 
+        // with random radii from 20 -> 100, sticking them into the myCircles array to keep track of them.
+        myCircles.push(new Circle(generateRandomNumberBetween(5, 50))); 
+
+    }
+
+    for (var i = 0; i < 100; i++) { 
+        // with random radii from 20 -> 100, sticking them into the myCircles array to keep track of them.
+        myCircles.push(new Circle(generateRandomNumberBetween(5, 50))); 
+         }
+
+        setInterval(redrawCircles, input*3000)
+
+    }
+    setInterval(drawCircles, input*3000);
+
+
+    // This function will redraw the circles based on our input variable
+    function redrawCircles() {
+        
+        myCircles.forEach(function(circle) {
+            var lastLeft = Number(circle.div.style.left.replace('%',''));
+            var lastTop = Number(circle.div.style.top.replace('%',''));
+            circle.div.style.left = lastLeft + generateRandomNumberBetween(-2, 2) + '%';
+            circle.div.style.top = lastTop + generateRandomNumberBetween(-1, 2) + '%';
+        });
+        input = generateInput();
+    };
+    
+
+    // if circle position puts me outside the bottom of canvas,
+    //reset top poisition to 0
+     
+    </script>
+</body>
+
+</html>
 
 
 <div class="drawingtest" style="width:100%; ">
