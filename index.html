@@ -86,19 +86,19 @@
     function drawCircles() {
     for (var i = 0; i < 10; i++) { 
         // with random radii from 20 -> 100, sticking them into the myCircles array to keep track of them.
-        myCircles.push(new Circle(generateRandomNumberBetween(5, 50))); 
+        myCircles.push(new Circle(generateRandomNumberBetween(5, 20))); 
 
     }
 
     for (var i = 0; i < 100; i++) { 
         // with random radii from 20 -> 100, sticking them into the myCircles array to keep track of them.
-        myCircles.push(new Circle(generateRandomNumberBetween(5, 50))); 
+        myCircles.push(new Circle(generateRandomNumberBetween(5, 40))); 
          }
 
-        setInterval(redrawCircles, input*3000)
+        setInterval(redrawCircles, input*4000)
 
     }
-    setInterval(drawCircles, input*3000);
+    setInterval(drawCircles, input*6000);
 
 
     // This function will redraw the circles based on our input variable
