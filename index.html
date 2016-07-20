@@ -35,7 +35,7 @@
  </div>
  <div id="hughithome"  >
 	<button class="button" id="hug" onclick="alert ('thank you for this gesture');">
-		 <a target="" href=" " class=" ">Hug me</a></button>
+		 Hug me</button>
 	<button class="button" id="hit" > 
 		<a target="" href=" " class=" ">Hit me</a></button>
 
@@ -48,8 +48,13 @@ function displayText() {
 
 
 </script>
- 
+<div id="myDiv" style="display:none;" class="answer_list" >WELCOME</div>
+<input type="button" name="answer" onclick="ShowDiv()" />
 
+<script>
+function ShowDiv() {
+    document.getElementById("myDiv").style.display = "";
+}</script>
  </div>
      		 <br><br> 
 </div><br><br><br>     <br><br> 
