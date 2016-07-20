@@ -28,7 +28,7 @@
     <title>Input > Velocity</title>
 </head>
 <body>
-    <script>
+<!--- >    <script>
     // This global variable will make the current value of "input" accessible ANYWHERE in your program.
     var input;
     function generateInput() {
@@ -117,10 +117,8 @@
     // if circle position puts me outside the bottom of canvas,
     //reset top poisition to 0
      
-    </script>
-</body>
-
-</html>
+    </script> <!--->
+ 
 
 
 <div class="drawingtest" style="width:100%; ">
@@ -129,6 +127,16 @@
  <div id="hughithome"  >
 	<p id="hug" > <a target="_blank" href=" " class=" ">Hug me  &raquo;</a></p>
 	<p id="hit" > <a target="_blank" href=" " class=" ">Hit me  &raquo;</a></p>
+
+<button onclick="displayText()">The time is?</button>
+
+<script>
+function displayText() {
+    document.getElementById("demo").innerHTML = Date();
+}
+</script>
+<p id="demo"></p>
+
  </div>
      		 <br><br> 
 </div><br><br><br>     <br><br> 
