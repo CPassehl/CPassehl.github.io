@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Input > Background Color</title>
+    <style>
+    body {
+        transition: 1s;
+        background-color: blue;
+    }
+    </style>
+</head>
+
+<body>
+    <script src='generateInput.js'>
+    	// This is the only new line we added to our sketch; it simply redefines `generateInput`, we have to comment out our `generateInput` though…
+    </script>
+    <script>
+mnm    var input;
+    var delay = 5000;
+    var r = Math.random() * 255; 
+    var g = Math.random() * 255; 
+    var b = Math.random() * 255; 
+
+    window.addEventListener("keydown",checkifkeypressed,false);
+    function checkifkeypressed(e){
+        if(e.keyCode == "38")  //up key
+            {delay = delay-1000;
+                console.log(delay);}
+        else if(e.keyCode == "40")  //down  key
+            {delay = delay+1000;
+                console.log(delay);}
+     vmsetInterval(changeTimeColor, delay);
+    } 
+
+    // function generateInput() {
+    //     // Write your code here! This function can do anything you want, but should ultimately return the value you want to affect the page's background color. Right now, it is just returning a random number between 0 and 1.
+    //     input = Math.random();
+    //     return input;
+    // }
+
+    // This is the function that will actually change the background color.
+    function changeBackgroundColor() {
+        // Then, it generates a new input number by running our generateInput function.
+    generateInput(); 
+    input = (input - 760) / 360;
+    //console.log(input);
+        // First it uses the current input value to choose a (grayscale) background color for the page using the CSS rgb() color setting, which expects a number between 0 and 255 for each of a red, green, and blu values.
+
+
+    document.body.style.backgroundColor = "rgb(" + Math.floor(input * r) + "," + Math.floor(input * g) + "," + Math.floor(input * b) + ")";
+
+
+    }
+
+    // Finally, the background is changed every 1 seconds (or 1000 milliseconds).
+    setInterval(changeBackgroundColor, 1000);
+
+function changeTimeColor(){
+     r = Math.random() * 255; 
+     g = Math.random() * 255; 
+     b = Math.random() * 255; 
+     console.log(delay);
+}
+
+
+ 
+
+
+
+
+
+    </script>
+</body>
+
+</html>
