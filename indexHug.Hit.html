@@ -42,6 +42,8 @@
 	<button class="button" id="hit" > 
 		Hit me</button> 
 		<audio src="CPassehl.github.io/owww.mp3" id="oww"> </audio>
+		<audio src="CPassehl.github.io/that hurt.mp3" id="hurt"> </audio>
+		  
 
 <script> 
    
@@ -52,6 +54,7 @@
     	document.getElementById("hit").id = "kick";
     document.getElementById("kick").addEventListener('click', function() {
     	document.getElementById("cpdrawing").src = "CPassehl.github.io/cp.driving1web.jpg";
+    	document.getElementById("hurt").play() ;
     	document.getElementById("kick").innerText = "fool";
     } )
     
