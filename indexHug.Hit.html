@@ -21,6 +21,7 @@
  	#hughithome {width: 40%;}
  	#hug {float: left;}
 	#hit {float: right; }
+	#kick {float: right; }
 .button {
     width: 120px; background-color: #d2cfb3; font-size:1em; font:courier;
     border-style: solid; border-color: black; border-width: 3px; margin: 2px;
@@ -40,14 +41,14 @@
 	Hit me</a></button> -->
 	<button class="button" id="hit" > 
 		Hit me</button> 
-		<audio src=" CPassehl.github.io/owww.mp3 " id="oww"> </audio>
+		<audio src="CPassehl.github.io/owww.mp3" id="oww"> </audio>
 
 <script> 
    
     document.getElementById("hit").addEventListener('click', function() {
     	document.getElementById("cpdrawing").src = "CPassehl.github.io/cp.driving2web.jpg";
     	document.getElementById("hit").innerText = "kick me";
-    	//document.getElementById("oww").play() ;
+    	document.getElementById("oww").play() ;
     	document.getElementById("hit").id = "kick";
     document.getElementById("kick").addEventListener('click', function() {
     	document.getElementById("cpdrawing").src = "CPassehl.github.io/cp.driving1web.jpg";
