@@ -28,6 +28,56 @@
 </style>
 
 <body>
+	<!-- THIS IS THE START OF THE RED YELLOW BLUE DIVS-->
+<div >	<h1><pre>javascript and curves<hr></h1>
+	<canvas class="div1" style="background-color: red; float: left;    width: 750px; height: 400px;"> </canvas>
+<script>
+  var cx = document.querySelector("canvas.div1").getContext("2d");
+  cx.beginPath();
+  cx.moveTo(10, 90);
+  // control=(60,10) goal=(90,90)
+  cx.quadraticCurveTo(60, 10, 90, 90);
+  cx.lineTo(60, 10);
+  cx.closePath();
+  cx.stroke();
+</script>
+
+</div>
+
+<div >	
+	<canvas class="div2" style="background-color: yellow; height: 400px; width: 750px;   float: right;"></canvas> 
+<script>
+  var cx = document.querySelector("canvas.div2").getContext("2d");
+  cx.beginPath();
+
+  cx.moveTo(110, 190);
+  // control1=(10,10) control2=(90,10) goal=(50,90)
+  cx.bezierCurveTo(30, 30, 90, 10, 50, 90);
+  cx.lineTo(190, 150);
+  cx.lineTo(110, 150);
+  cx.closePath();
+  cx.stroke();
+</script>
+</div>
+
+<div >	
+	<canvas class="div3" style="background-color: cyan;  float: left; width: 750px; height: 400px;"></canvas>
+<script>
+  var cx = document.querySelector("canvas.div3").getContext("2d");
+  cx.beginPath();
+  cx.moveTo(10, 10);
+  // control=(90,10) goal=(90,90) radius=20
+  cx.arcTo(90, 10, 90, 90, 20);
+  cx.moveTo(10, 10);
+  // control=(90,10) goal=(90,90) radius=80
+  cx.arcTo(90, 10, 90, 90, 80);
+  cx.stroke();
+</script>
+
+</div>
+
+<h1 style="float: left"><pre>end javascript and curves<hr></h1>
+<!-- THIS IS THE END OF THE RED YELLOW BLUE DIVS-->
 
 	<div class="drawingtest" style="width:100%; ">
  		<img id="cpdrawing" src="CPassehl.github.io/cp.driving1web.jpg" style='width:35%; '>   <br><br></a>
