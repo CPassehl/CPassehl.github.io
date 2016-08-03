@@ -58,6 +58,7 @@
         box.setAttribute('clicktimes', clicktimes + 1);
         var nowClicked = box.getAttribute('clicktimes');
         if (nowClicked == '1') {
+        document.getElementById("cpdrawing").src = "CPassehl.github.io/cp.driving3web.jpg";	  
             box.innerText = 'thank you for your kind gesture. Wait for a surprise.';
             setTimeout(function(){window.location = "https://cpassehl.github.io/indexCP.html";},2500);
         }
