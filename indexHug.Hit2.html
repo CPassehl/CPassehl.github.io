@@ -1,0 +1,154 @@
+<html>
+<head>  </head>     
+
+<body style='
+    font-family:courier;
+    margin: 3em;
+    padding: 1em;
+    line-height: 1.65em;
+    font-size: 18px;
+    letter-spacing: normal;
+    color: red;
+    
+'>     	
+<style>
+	.Sunday {background-color:orange;} 
+              a:link    {color:green; background-color:transparent; text-decoration:none}
+               a:visited {color:dark grey; background-color:transparent; text-decoration:none}
+               a:hover   {color:white; background-color:transparent; text-decoration:underline}
+               a:active  {color:yellow; background-color:transparent; text-decoration:underline}
+	#cpdrawing {border-style: dotted; border-color: black; border-width: 10px; margin:1px 20 20 20;  }
+ 	#hughithome {width: 40%;}
+ 	.hug {float: left;  width: 120px; font-size:1em; font:courier;
+    border-style: solid; border-color: black; border-width: 3px; margin: 2px; padding-left:5px;}
+	.hit {float: right; width: 120px; font-size:1em; font:courier;
+    border-style: solid; border-color: black; border-width: 3px; margin: 2px; padding-left:5px; }
+  
+
+	 
+.button {
+    width: 120px; font-size:1em; font:courier;
+    border-style: solid; border-color: black; border-width: 3px; margin: 2px;
+}
+</style>
+
+<body>
+
+	<div class="drawingtest" style="width:100%; ">
+ 		<img id="cpdrawing" src="cp.driving1web.jpg" style='width:35%; '>   <br><br></a>
+	</div>
+ 
+ <div id="hughithome"  >
+    <div class = "hug" clicktimes=0> Hug me.</div>
+	<!--<button class="button" id="hug" clicktimes=0
+        >Hug me</button>
+ <!-- onclick="window.location = 'https://cpassehl.github.io/indexCP.html';" -->
+	<div  class = "hit" clicktimes=0 > 
+		Hit me </div> 
+		
+	<audio src="owww1.mp3" id="oww"> </audio>
+	<audio src="that hurt.mp3" id="hurt"> </audio>
+	<audio src="quit.mp3" id="quitit"> </audio> 
+
+
+    <script>
+    var box = document.querySelector('div.hug');
+    box.addEventListener('click', function(){ 
+        var clicktimes = parseInt(box.getAttribute('clicktimes'));
+        box.setAttribute('clicktimes', clicktimes + 1);
+        var nowClicked = box.getAttribute('clicktimes');
+        if (nowClicked == '1') {
+            box.innerText = 'thank you for your kind gesture. Wait for a surprise.';
+            setTimeout(function(){window.location = "https://cpassehl.github.io/indexCP.html";},2500);
+        }
+        
+            });
+
+   var boxA = document.querySelector('div.hit' );
+    boxA.addEventListener('click', function(){ 
+        var clicktimes = parseInt(boxA.getAttribute('clicktimes'));
+        boxA.setAttribute('clicktimes', clicktimes + 1);
+        var nowClicked = boxA.getAttribute('clicktimes');
+        if (nowClicked == '1') {
+            boxA.innerText = 'Ow! Hit again?';
+        document.getElementById("cpdrawing").src = "cp.driving2web.jpg";
+        document.getElementById("oww").play() ;
+        }
+        else if (nowClicked == '2') {
+            boxA.innerText = 'Idiot! not again?';
+        document.getElementById("cpdrawing").src = "cp.driving1web.jpg";
+        document.getElementById("hurt").play() ;
+        }
+        else if (nowClicked == '3') {
+            boxA.innerText = 'Stop it. not more?';
+        document.getElementById("cpdrawing").src = "cp.driving2web.jpg";
+        document.getElementById("quitit").play() ;
+        }
+    });
+    </script>
+		
+		
+<!--<script> 
+
+document.getElementById("hug").addEventListener('click', function() {
+    document.getElementById("cpdrawing").src = "cp.driving3web.jpg "; 
+    document.getElementById("hug").innerText = "thank you for your kind gesture. click again for a gift";
+    setTimeout(function(){window.location = "https://cpassehl.github.io/indexCP.html";},1000); 
+})
+
+document.getElementById("hit").addEventListener('click', function() {
+    document.getElementById("cpdrawing").src = "cp.driving2web.jpg";
+	document.getElementById("hit").innerText = "kick me";
+	document.getElementById("oww").play() ;
+	document.getElementById("hit").id = "kick" ;
+     	
+    document.getElementById("kick").addEventListener('click', function() {
+    	document.getElementById("cpdrawing").src = "cp.driving1web.jpg";
+        document.getElementById("hurt").play() ;
+    	document.getElementById("kick").innerText = "fool";
+    	document.getElementById("kick").id = "punch";
+
+        document.getElementById("punch").addEventListener('click', function() {
+            document.getElementById("cpdrawing").src
+             = "cp.driving2web.jpg";
+            document.getElementById("quitit").play() ;
+            document.getElementById("punch").innerText = "moron";
+
+
+
+        })
+    } );
+    } )   
+     
+</script> -->
+
+ <div id="spacer" style="height:80%">
+ 	</div>
+ </div>
+ 
+ <div id="howrude1">  
+ how rude! are you going to kick me now? 
+ 	<button class="button" id="kick" onclick="window.location = '#kickandouch;" >
+		 Kick me</button></div>
+		 
+		 
+
+ <div id="kickandouch"  
+ that hurt!! </div>	
+ 	
+ 	
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ </body>
+ 
+ 
+ </html>
