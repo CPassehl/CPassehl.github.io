@@ -24,7 +24,7 @@
 	.hit {float: right; width: 120px; font-size:1em; font:courier;
     border-style: solid; border-color: black; border-width: 3px; margin: 2px; padding-left:5px; }
   
-
+#completebackgrnd { size:cover;}
 	 
 .button {
     width: 120px; font-size:1em; font:courier;
@@ -33,7 +33,7 @@
 </style>
 
 <body>
-
+<div id="completebackgrnd"></div>
 	<div class="drawingtest" style="width:100%; ">
  		<img id="cpdrawing" src="cp.driving1web.jpg" style='width:35%; '>   <br><br></a>
 	</div>
@@ -85,6 +85,12 @@
         document.getElementById("cpdrawing").src = "cp.driving2web.jpg";
         document.getElementById("quitit").play() ;
         }
+        else if (nowClicked == '4') {
+            boxA.innerText = 'That is it.';
+        document.getElementById("#completebackgrnd").style.fill = "black";
+        document.getElementById("quitit").play() ;
+        }
+        
     });
     </script>
 		
