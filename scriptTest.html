@@ -11,7 +11,7 @@ var angle = 0;
 
 function setup() {
   createCanvas(1200, 600);
-  styleCanvas.padding-top(500px);
+
   diameter = height - 30;
   noStroke();
   fill(255, 0, 0);
@@ -46,13 +46,14 @@ var angle = 0;
 
 function setup() {
   createCanvas(1200, 600);
+    styleCanvas.padding-top(500);
   diameter = height - 30;
   noStroke();
   fill(0, 0, 200);
 }
 
 function draw() {
-  background(0, 10, 170);
+  background(0, 10, 190);
 
   var d1 = 10 + (sin(angle) * diameter/2) + diameter/2;
   var d2 = 10 + (sin(angle + PI/2) * diameter/2) + diameter/2;
