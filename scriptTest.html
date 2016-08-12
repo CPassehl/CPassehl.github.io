@@ -7,13 +7,28 @@
 </style>
 </head>
 <body>
-<div>this is a div</div>
+<div id="divone">this is a div</div>
+
+<div id="divtoo">this is div too</div>
 <script>
+
 var x = 200;
 var y = 200;
 
 function setup() {
   createCanvas(1000,800);
+   var canvas = createCanvas(1000, 800);
+
+  // Move the canvas so it's inside our <div id="sketch-holder">.
+  canvas.parent('divone');
+}
+
+function setup() {
+  createCanvas(1000,800);
+   var canvas = createCanvas(1000, 800);
+
+  // Move the canvas so it's inside our <div id="sketch-holder">.
+  canvas.parent('divtoo');
 }
 
 function draw() {
