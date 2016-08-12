@@ -41,16 +41,27 @@ ellipse(width, height/2, d3, d3);
 </script>
  <div>this is div too</div>
 <script>
+
+var p5_0 = new p5(function(sketch) {
+ 
+  var x = 100, y = 100;
+ 
+  sketch.setup = function() {
+    var cnv = sketch.createCanvas(1200, 600);
+    cnv.class('lemon');
+  };
+ 
+  sketch.draw = function() {
+    sketch.background(0, 0, 200);
+      diameter = height - 30;
+  noStroke();
+ 
+  };
+});
+
  var diameter; 
 var angle = 0;
 
-function setup() {
-  createCanvas(1200, 600);
-    styleCanvas.padding-top(500);
-  diameter = height - 30;
-  noStroke();
-  fill(0, 0, 200);
-}
 
 function draw() {
   background(0, 10, 190);
