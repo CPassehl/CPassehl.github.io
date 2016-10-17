@@ -33,19 +33,19 @@
         var undef;
         if ((nowClicked == '1') & (0 != NaN)) {
         	diva2.style = "color: red; background-color:#e0d87d";
-            diva2.innerHTML = "<h4><pre>For this page, I used<h1>NaN</h1>within my javascript.<br><br>As part of the 'if' statement NaN was used to produce a Boolean value.<br><br>'NaN' is not equal to 0 and will return as false,<br><br>so my condition (0 != NaN) for the operation was met and this type was displayed.<br><br><br>Please click to see what happens when 'null' is compared to a numerical value.<br><br><br><pre><h6>––Source: Mozilla Developers Network link,https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN' </h6><br>'";
+		diva2.innerHTML = "<h4><pre>For this page, I used<h1>NaN</h1>within my javascript.<br><br>As part of the 'if' statement NaN was used to produce a Boolean value.<br><br>'NaN' is not equal to 0 and will return as false,<br><br>so my condition (0 != NaN) for the operation was met and this type was displayed.<br><br><br>Please click to see what happens when 'null' is compared to a numerical value.<br><br><br><pre><h6>––Source: Mozilla Developers Network link,https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN' </h6><br>'";
         }
         else if ((nowClicked == '2') & (-1000 !== null)) {
         	diva2.style = "color: red; background-color:#b1e193";
-            diva2.innerHTML = "<h4><pre>MDN defines<h1>null</h1>as 'The value null represents the intentional absence of any object value.<br><br>It is one of JavaScript's primitive values.'<br><br>For this page, my javascript contained an else if statement where null is not equal<br><br>to a numerical value (-1000 !== null). This condition is met and the type is displayed.<br><br><br>Please click to see what happens when 'undefined' is defined.</h4><br><br><pre><h6>––Source: Mozilla Developers Network link,https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN'<br>'</h6>'";
+		diva2.innerHTML = "<h4><pre>MDN defines<h1>null</h1>as 'The value null represents the intentional absence of any object value.<br><br>It is one of JavaScript's primitive values.'<br><br>For this page, my javascript contained an else if statement where null is not equal<br><br>to a numerical value (-1000 !== null). This condition is met and the type is displayed.<br><br><br>Please click to see what happens when 'undefined' is defined.</h4><br><br><pre><h6>––Source: Mozilla Developers Network link,https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN'<br>'</h6>'";
         }
 
         else if ((nowClicked == '3') & (undef === undefined) & (undefined === undefined)) {
         	diva2.style = "color: blue; background-color:#91c0ce";
-            diva2.innerHTML = "<pre><h1>Undefined</h1><h4>is another javascript primitive value.<br>One can use undefined in varied ways. For instance, my 'if' statement for this page contains<br>2 uses of undefined. First I have created a variable 'undef' and not given it a value.<br>Thus, (undef === undefined) will return as true. My second use involves using the<br>identity operator with undefined. As written (undefined === undefined) will also return<br> as true and the type on this page is displayed.<br><br><br>Please click for a surprise.<br><br><br></h4><pre><h6>––Source: Mozilla Developers Network link,https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN'<br>'</h6>" ;
+		diva2.innerHTML = "<pre><h1>Undefined</h1><h4>is another javascript primitive value.<br>One can use undefined in varied ways. For instance, my 'if' statement for this page contains<br>2 uses of undefined. First I have created a variable 'undef' and not given it a value.<br>Thus, (undef === undefined) will return as true. My second use involves using the<br>identity operator with undefined. As written (undefined === undefined) will also return<br> as true and the type on this page is displayed.<br><br><br>Please click for a surprise.<br><br><br></h4><pre><h6>––Source: Mozilla Developers Network link,https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN'<br>'</h6>" ;
         }
         else if (nowClicked == '4') { 
-		   diva2.innerHTML = "<src=CPassehl.github.io/hawk.e.jpg>";
+		document.getElementById("diva2").src = "CPassehl.github.io/hawk.e.jpg";
         }
     });
         
