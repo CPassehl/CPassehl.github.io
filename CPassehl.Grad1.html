@@ -21,6 +21,8 @@
 <div id="diva1" >
 	<div id="diva2" clicktimes=0><pre><h4>This is an attempt to talk about the curious<br>and sometimes vexing cases of <h1>NaN, null and undefined.</h1><h4>In a nutshell, NaN (Not-a-Number)'is a special value used to denote an unrepresentable value'.<br>In certain instances, NaN will return a false value with regard to Boolean expressions.<br>Enter "NaN = NaN" into your console and NaN will be returned.<br>Enter "NaN == NaN" or "NaN === NaN"(== is the equality operator,<br>=== is the identity operator) and either will return false. Crazy, right?<br><br>Null and undefined also have unique idiosyncrasies. Null and undefined are each expressed<br>as a javascript primitive, meaning that either'is data that is not an object and has no methods'.<br><br>When first learning javascript, it is sometimes confusing (!) to understand<br>that NaN does not equal undefined or null, and that none of these values equal each other.<br><br>Please click on the text to read more.</h4><pre><h6>––Sources: 'Ariya Hidayat, https://ariya.io/2014/05/the-curious-case-of-javascript-nan'<br>'Mozilla Developers Network,https://developer.mozilla.org/en-US/docs/Glossary/Primitive' </h6> 
 	</div>
+	<div class="drawingtest" id="diva3" style="width:100%; ">
+	<img id="cpdrawing" src="hawk.e.jpg" style='width:35%; '>
 </div>
 
 <script>
@@ -45,7 +47,7 @@
 		diva2.innerHTML = "<pre><h1>Undefined</h1><h4>is another javascript primitive value.<br>One can use undefined in varied ways. For instance, my 'if' statement for this page contains<br>2 uses of undefined. First I have created a variable 'undef' and not given it a value.<br>Thus, (undef === undefined) will return as true. My second use involves using the<br>identity operator with undefined. As written (undefined === undefined) will also return<br> as true and the type on this page is displayed.<br><br><br>Please click for a surprise.<br><br><br></h4><pre><h6>––Source: Mozilla Developers Network link,https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN'<br>'</h6>" ;
         }
         else if (nowClicked == '4') { 
-		document.getElementById("diva2").src = "CPassehl.github.io/hawk.e.jpg";
+		document.getElementById("diva3").src = "CPassehl.github.io/hawk.e.jpg";
         }
     });
         
