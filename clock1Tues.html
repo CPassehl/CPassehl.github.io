@@ -1,0 +1,85 @@
+ <html>
+<head>
+<script type="text/javascript" src="../../dist/paper-full.js"></script>
+<script type="text/paperscript" canvas="canvas">
+		// Create a centered text item at the center of the view:
+
+var text2 = new PointText({
+	point: view.center,
+	justification: 'center',
+	font: 'sans-serif',
+	fontWeight: 700,
+	fontSize: 1000,
+	fillColor: 'yellow'
+});
+
+/* var text3 = new PointText3({
+	point: view.center,
+
+	content: "move mouse to play audio, click to pause audio"
+	font: 'sans-serif',
+	fontWeight: 700,
+	fontSize: 20,
+	fillColor: 'yellow'
+}); */
+
+		// Define a random point in the view, which we will be moving
+		// the text item towards.
+
+var destination = Point.random() * view.size;
+
+function onFrame(event) {
+	
+	var vector = destination - text2.position;
+	text2.position += vector / 90;
+	text2.content = Math.round(vector.length);
+	
+	// If the distance between the path and the destination is less
+	// than 5, we define a new random point in the view to move the
+	// path to:
+
+	if (vector.length < 4) {
+		destination = Point.random() * view.size;
+	}
+}
+
+var x = document.getElementById("myAudio");
+var t = document.getElementById("text2");
+onMouseMove = function playAudio() {
+	x.play() ;
+	x.loop = true; 
+}
+
+//onKeyDown = function skewEl(){
+//	t.skew(45, 35, 0);
+//}
+
+onMouseDown = function pauseAudio() {
+	x.pause();
+}
+
+
+
+</script>
+<style>
+	#canvas[resize] {
+	background-color: black;
+ 
+    width: 100%;
+    height: 100%;
+}
+</style>
+</head>
+
+<body>
+<div id="mouseText"> move mouse to play audio, click to pause audio </div>
+<canvas id="canvas" resize></canvas>
+
+<audio id="myAudio"   src="24hours.mp3">
+</audio>
+
+
+
+</body>
+
+</html>
