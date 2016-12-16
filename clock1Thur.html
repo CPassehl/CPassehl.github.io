@@ -1,0 +1,148 @@
+<html>    
+<!-- note: "!DOCTYPE html" caused the canvas to display incorrectly .
+SOURCES for code:  Paper.js is distributed under the permissive MIT License:Copyright (c) 2011, Juerg Lehni & Jonathan Puckey http://lehni.org/ & http://jonathanpuckey.com/ All rights reserved.  and    w3schools.com -->
+<meta charset="utf-8">
+<title>Clock</title>
+<head>
+<script type="text/javascript" src="CPassehl.github.io/paper-full.js"></script>
+<style>
+#myCanvas[resize] {
+	background-color: black;
+    width: 100%;
+    height: 100%;
+}
+#mouseText {
+	display: inline ;
+	}
+#myBtn {
+	display: inline;
+	}
+#demo {
+	display: inline;
+	}
+#cont:hover  {
+	color: red;
+}
+</style>
+</head>
+<body>
+
+<div id="mouseText"><pre><span>   ◊ clock.concept   ◊ click canvas to pause audio.   ◊  press space bar to resume audio.                           </span><span id = "cont"> 	◊ contact me. </span><span id="demo"><pre>  </span></div>
+ 
+<canvas id="myCanvas" tabindex='1' resize></canvas>
+
+<audio id="myAudio"   src="CPassehl.github.io/24hours.mp3" autoplay loop=true >
+</audio>
+
+<script type="text/paperscript" canvas="myCanvas">
+ 
+
+document.getElementById("cont").addEventListener("click", function(){
+    document.getElementById("demo").innerHTML = " yes " ;
+
+});
+
+
+		// Create a centered text item at the center of the view:
+
+var text2 = new PointText({
+	point: view.center,
+	justification: 'center',
+	font: 'sans-serif',
+	fontWeight: '700',
+	fontSize: 1000,
+	fillColor: 'yellow',
+});
+
+var text3 = new PointText({
+	point: view.center,
+	justification: 'center',
+	font: 'sans-serif',
+	fontWeight: 700,
+	fontSize: 850,
+	fillColor: 'cyan',
+}); 
+
+		// Define a random point in the view, which we will be moving
+		// the text item towards.
+
+var destination = Point.random() * view.size;
+
+function onFrame(event) {
+	
+	var vector = destination - text2.position + 300;
+	text2.position += vector / 125;
+	text2.content = Math.round(vector.length);
+
+	var vector3 = destination - text3.position;
+	text3.opacity = 0.5;
+	text3.position += vector3 / 90;
+	text3.content = Math.round(vector3.length); 
+	
+		// If the distance between the path and the destination is less
+		// than 5, we define a new random point in the view to move the
+		// path to:
+
+	text3.rotate(15);
+
+	if (vector.length < 4) {
+		destination = Point.random() * view.size;
+	}
+	if (text2.position < 4) {
+		destination = Point.random() * view.size;
+	}
+}
+
+		// begin mouse + key event code
+var x = document.getElementById("myAudio");
+tool.onMouseDown = function pauseAudio() {
+	x.pause();
+}
+tool.onKeyDown = function(event) {
+    if (event.key == 'space') {
+	x.play() ;
+	x.loop = true;
+	}
+}
+
+		// begin mouse move for element manipulation 
+function onMouseMove(event2) {
+	//alert("ok");
+	var i;
+	for (var i = 0; i < 30; i++) {
+	document.getElementById("myCanvas").style.backgroundColor = "blue";
+	text4.opacity = 0.25;
+	text4.rotate(25);
+    var vector4 = destination3 - text4.position + 300;
+	text4.position += vector4 / 10;
+	text4.content = Math.round(vector4.length * 3);
+
+    if (vector4.length < 4) {
+		destination3 = Point.random( ) * view.size;
+	}
+	if (vector4.length > 20) {
+		document.getElementById("myCanvas").style.backgroundColor = "red";
+	}
+	if (vector4.length > 45) {
+		document.getElementById("myCanvas").style.backgroundColor = "black";
+	}
+	} 
+}   
+
+var destination3 = Point.random( ) * view.size;
+var text4 = new PointText({
+		point: view.center,
+		justification: 'center',
+		font: 'sans-serif',
+		fontWeight: 700,
+		fontSize: 950,
+		fillColor: 'cyan',
+});  
+
+
+
+
+</script>
+</body>
+
+</html>
