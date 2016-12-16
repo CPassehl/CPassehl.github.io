@@ -27,7 +27,7 @@ SOURCES for code:  Paper.js is distributed under the permissive MIT License:Copy
 </head>
 <body>
 
-<div id="mouseText"><pre><span>   ◊ clock.concept   ◊ click canvas to pause audio.   ◊  press space bar to resume audio.                           </span><span id = "cont"> 	◊ contact me. </span><span id="demo"><pre>  </span></div>
+<div id="mouseText"><pre><span>   ◊ clock.concept     ◊ move the mouse     ◊ click canvas to pause audio.     ◊  press space bar to resume audio.                           </span><span id = "cont"> 	◊ contact me. </span><span id="demo"><pre>  </span></div>
  
 <canvas id="myCanvas" tabindex='1' resize></canvas>
 
@@ -38,7 +38,7 @@ SOURCES for code:  Paper.js is distributed under the permissive MIT License:Copy
  
 
 document.getElementById("cont").addEventListener("click", function(){
-    document.getElementById("demo").innerHTML = " yes " ;
+    document.getElementById("demo").innerHTML = "cpdesign@snet.net " ;
 
 });
 
@@ -131,16 +131,13 @@ function onMouseMove(event2) {
 
 var destination3 = Point.random( ) * view.size;
 var text4 = new PointText({
-		point: view.center,
-		justification: 'center',
-		font: 'sans-serif',
-		fontWeight: 700,
-		fontSize: 950,
-		fillColor: 'cyan',
+	point: view.center,
+	justification: 'center',
+	font: 'sans-serif',
+	fontWeight: 700,
+	fontSize: 950,
+	fillColor: 'cyan',
 });  
-
-
-
 
 </script>
 </body>
