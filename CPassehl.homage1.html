@@ -1,0 +1,128 @@
+<!DOCTYPE html>  
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.min.js" integrity="sha256-kOMiAh3njmqfTtvuQaWkt1CORCQGcX6vspmuZL615Zk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.dom.js" integrity="sha256-ylVoD/YZjnDGXuogdMTwAI+Ez+m/48IPpUbEQsUKxtE=" crossorigin="anonymous"></script>
+    <script src="libraries/p5.serialport.js" type="text/javascript"></script>
+
+    <script src="libraries/p5.dom.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.sound.js" integrity="sha256-18fY6iwLuiiGOBx/r3c/gi1dWGoApNNQMJXFEyuLuu4=" crossorigin="anonymous"></script>
+    <script> src="Desktop/p5 test stuff/1 p5 class/scriptCP.js"</script>
+    <style> 
+    body {padding-left: 2%; padding-top: 2%; background: #476273; max-width: 2000px; margin: auto;}    
+    .imageText {  font-family: "Lucida Grande", "Lucida Sans Unicode", arial, helvetica, verdana, sans-serif; color:red; margin: 5%; width: 55%; } 
+    #disappear1  {display: none;}
+    canvas {margin-left: 2%;  margin: auto; } 
+    </style>
+    </head>
+    <body>
+
+    <div id="sketch-holder"> </div>
+    <!-- <canvas id="myCanvas">      </canvas> -->
+      <div class="imageText" id="disappear1"> 
+        Many artists have been influenced by Josef Albers. I am in that class.<br>My code drawing is a simple homage to the masterful patterns and compositions of Albers. Along with the distinct and simple arrangements seen in "Prefatio", there exists a confidence and clarity in his composition.<br> The code sketch shown alludes to the patterns of Albers by the variation of the textures created by the spacing of the circles and cubes. Concluding the sketch is the viewers choice as determined by how many mouse clicks are entered. 
+        <br>
+        <br>Josef Albers, Prefatio, 1942, Harvard Art Museums <br><br><img src="http://ids.lib.harvard.edu/ids/view/20683912?height=700"> <!--<img src="http://ids.lib.harvard.edu/ids/view/18204152?height=675">-->
+      </div>
+
+    </body>
+
+   <script>
+  document.addEventListener("mousemove", function myFunction() { 
+    var elem = document.getElementById("disappear1").style.display = "block"; 
+    if (mousemove = true) {document.getElementById("disappear1").style.display = "block";} 
+  });
+  </script>   
+  <!-- <script>
+  var y = 0; 
+  var x = 60;
+  var yA = 10; 
+  var xA = 250;
+  //var xB = mouseX;
+  //var yB = mouseB;
+  function setup() {
+    var canvas = createCanvas(displayWidth * .65, displayHeight * .7); 
+    canvas.parent('sketch-holder'); 
+    background('255');
+    textFont("Source Code Pro");
+  }
+
+  function draw() {
+    strokeWeight(0);
+    textSize(80);
+    text("c    l     i       c           k               .                       .                         .", 10, 900);
+    stroke(78, 91, 115);
+    strokeWeight(.5);
+    line(x + 20, y + 1, 200, 400);
+    // first series of circles 
+    ellipse(x,y, 60,60);
+      y = y+3;             // animates first circle at left
+
+      if(y >= 225) { 
+      y=401; 
+      x=x+3;
+    }
+      if(x >= 400) {
+      x = x + 2; y = 500;
+      if(x >= 500) { 
+      x = x + 1;y = 700;
+          if(x >= 1100 && y < x) { 
+          noLoop(25) }}
+    } 
+
+    // second series of circles
+    ellipse(xA,yA, 80,80);    
+      yA = yA+5;
+      if(x >= 1200 && yA >= 200) {
+      xA = 1199; yA = yA-1; 
+    }
+    //beginShape(rect); 
+    rect(xA, yA, 600, 600);
+    noFill();
+      if(yA <= 400) {
+        stroke(0);
+        xA = xA + 6; yA = yA + 3;
+          if(xA >= 550){
+            console.log("ok okkkkkkkkkk");
+            frameRate(20);
+            xA = xA + 10;
+          }
+
+}
+}
+
+
+    document.addEventListener("click", function aFunction() { 
+    var elem1 = canvas; 
+    if (click = true) { 
+      loop();
+      translate(mouseX, mouseY + 35);
+      rotate(mouseX - 50, mouseY);
+        beginShape();
+        vertex(300, 375);
+        vertex(400, 920);
+        vertex(500, 675);
+        vertex(600, 200);
+        vertex(700, 750);
+        vertex(800, 290);
+        vertex(900, 375);
+        vertex(10, 75);
+        vertex(40, 20);
+        vertex(50, 5);
+        vertex(60, 20);
+        vertex(70, 7);
+        vertex(80, 29);
+        vertex(90, 37);
+        vertex(300, 175);
+        endShape(); 
+        }
+}) 
+
+  </script> -->
+
+  </html>
+
+
+
