@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/addons/p5.dom.min.js" integrity="sha256-XJv4F6vIKIxDBK9yFUP0+7QP6z7AHjwNvmAS/ZsNogM=" crossorigin="anonymous"></script>
+    <script src="libraries/p5.serialport.js" type="text/javascript"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/p5.min.js" integrity="sha256-hTadFyx999S2PaNVgI6MyGaojC6fzBZb2D5GibT/Fno=" crossorigin="anonymous"></script>
+
+    <!--<script src="libraries/p5.dom.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.sound.js" integrity="sha256-18fY6iwLuiiGOBx/r3c/gi1dWGoApNNQMJXFEyuLuu4=" crossorigin="anonymous"></script>  -->
+</head>
+<body>
+<!-- <p style="font-size: 112px; color: red;"> blah blah blah</p> -->
+
+
+<script>
+var cols, rows;
+var scl = 20;
+var w = 1200;
+var h = 1200;
+
+
+
+function setup() {
+	createCanvas(displayWidth * .75, displayHeight * .75 );  
+	//(displayWidth * .75, displayHeight * .75, WEBGL)
+	//noFill();
+	cols = w/scl;
+	rows = h/scl;
+	strokeWeight (0.15);
+	stroke(0);
+	var randomTwo = random(40); 
+	frameRate(randomTwo);
+
+} 
+
+function draw() {
+	  //fill(200, 255, 0, 51);
+
+	background(255);
+	stroke(0);
+	strokeWeight (0.25);
+	fill(255,255,150, 2);
+
+	translate(width/5, height/3 );
+	//rotateX(PI/3 );
+	
+	translate(-w/5, -h/4, 0);
+
+	for(var y = 0; y < rows; y++) {
+		beginShape(TRIANGLE_STRIP);
+		//stroke(0);
+		 
+
+		for(var x = 0; x < cols; x++) {
+			var randomOne = random(500);
+
+			triangle( x *scl, y *scl, randomOne, scl, randomOne + 200, randomOne + 50);
+			vertex(x*scl, (y+1)*scl, scl, scl);
+			//rect(x*scl, y*scl, scl, scl);
+
+		}
+		endShape();
+	}
+	//fill( 255, 255, 0, 100  );
+	//rect(40, 90, scl, scl);
+	rectColor();
+
+	//someText();
+}
+
+function rectColor(){
+	var rectW = random(800) ;
+	var rectH = random(-100, 800);
+	var sclNew = random(650);
+	var rRand = random(255);
+	noStroke();
+	fill( rRand, rectW, rectH, 20 );
+	triangle(rectW, rectH, rectW + 150,rectH + 250 , sclNew , sclNew);
+ 
+}
+</script>
+</body>
+</html>
+
+
+
