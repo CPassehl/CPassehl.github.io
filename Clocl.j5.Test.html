@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/addons/p5.dom.min.js" integrity="sha256-XJv4F6vIKIxDBK9yFUP0+7QP6z7AHjwNvmAS/ZsNogM=" crossorigin="anonymous"></script>
+    <script src="libraries/p5.serialport.js" type="text/javascript"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/p5.min.js" integrity="sha256-hTadFyx999S2PaNVgI6MyGaojC6fzBZb2D5GibT/Fno=" crossorigin="anonymous"></script>
+
+    <!--<script src= "https://CPassehl.github.io/fiveStrikes3.20Final.html"> </script> -->
+
+</head>
+<body>
+<p><pre>  christopher passehl
+
+<a class = "button" id = oneButton  href="https://CPassehl.github.io/fiveStrikes3.20Final.html"  > click for Project 2 Part A</a>
+<p>  </p>
+<a class = "button" id = twoButton  href="https:// CPassehl.github.io/Clock.TestB.html "    > click for Project 2 Part B</a>
+<p>  </p>
+<a class = "button" id = threeButton  href="https://CPassehl.github.io/fiveStrikes3.20Final.html"   > click for Project 2 Part C</a></pre></p>
+
+
+
+
+<script>
+// source attribution   
+//http://codepen.io/dmahmarian/pen/rOGNXd?editors=0010
+//http://p5js.org
+//https://github.com/processing
+/* function setup(){
+	createCanvas(windowWidth,windowHeight);
+	angleMode(DEGREES);
+	textFont("Source Code Pro");
+}
+
+function draw(){
+	var hourHeight = height/24;
+	var hourWidth = width/48 * hour();
+	var secondHeight = height/60 * second();
+	var secondWidth = width/120 * second();
+	var minuteHand = minute()/60 * 360;
+	var hourHand = hour()/12 * 360;
+	background(255);
+	noStroke();
+
+	var cent = width/2;
+	textSize(30);
+	var d = day();
+	var m = month();
+	var mm = minute();
+	var s = second();
+	var y = year();
+	var h = hour() % 12;
+
+fill(150,200,255);
+text( m + '.' + d + '.' + y, cent-200, 50 );
+
+fill(150);
+text(h + ':' + mm + ':' + s , cent, 50);
+
+	//fill(0);
+    //ellipse(width/2, height/2, secondWidth, secondWidth);
+    
+    fill(187, 0, 0);
+    ellipse(width/2, height/2, hourWidth, hourWidth);
+    
+    // clock hands
+    push();
+    translate(width/2,height/2);
+    var rotationOfHand = (millis()% 60000 / 60000) * 360;
+    rotate(rotationOfHand);
+    fill('#ffffff');
+    rect(0,0,200,5);
+    pop()
+
+    push();
+    translate(width/2,height/2);
+    var rotationOfHand = minuteHand;
+    rotate(rotationOfHand-90);
+    fill('#ffffff');
+    rect(0,0,200,5);
+    pop()
+    
+    push();
+    translate(width/2,height/2);
+    var rotationOfHand = hourHand
+    rotate(rotationOfHand-90);
+    fill('#ffffff');
+    rect(0,0,150,5);
+    pop()  
+}  */  
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+ }
+var cx, cy;
+var secondsRadius;
+var minutesRadius;
+var hoursRadius;
+var clockDiameter;
+
+
+function setup() {
+	createCanvas(windowWidth , windowHeight  );
+	stroke(255);
+
+	textFont("Source Code Pro");
+
+	var radius = min(windowWidth/ 4, windowHeight/ 4) ;
+	secondsRadius = radius * 1.25;
+	minutesRadius = radius * 1;
+	hoursRadius = radius * 0.50;
+	clockDiameter = radius * 2.25;
+	var cent1 = windowWidth/ 2;
+	var cent2 = windowHeight/ 2.5;
+  
+	cx = cent1;
+	cy = cent2;
+}
+
+function draw() {
+
+
+	background(100);
+  	var cent = width/2;
+	textSize(30);
+	var d = day();
+	var m = month();
+	var mm = minute();
+	var s1 = second();
+	var y = year();
+	var h = hour() % 12;
+
+	fill(150,200,255);
+	noStroke();
+	//text( m + '.' + d + '.' + y, cent-200, 50 );
+
+	fill(150, 255, 200);
+	noStroke();
+	//text(h + ':' + mm + ':' + s1 , cent, 50);
+
+ 	scale(mouseX/1500, mouseY/ 1000);     //random(975,1000)
+ //fill(mouseX/500, mouseY/random(200,255));
+  // Draw the clock background
+
+	noStroke();
+ 
+	//rect(movingBackground());
+		fill(80);
+		    	ellipse(movingBackground());
+	ellipse(cx, cy, clockDiameter, clockDiameter); 
+
+
+	// Angles for sin() and cos() start at 3 o'clock;
+	// subtract HALF_PI to make them start at the top
+	var s = map(second(), 0, 60, 0, TWO_PI) - HALF_PI;
+	var m = map(minute() + norm(second(), 0, 60), 0, 60, 0, TWO_PI) - HALF_PI; 
+	var h = map(hour() + norm(minute(), 0, 60), 0, 24, 0, TWO_PI * 2) - HALF_PI;
+
+	// Draw the hands of the clock
+	stroke(255);
+	strokeWeight(1);
+	line(cx, cy, cx + cos(s) * secondsRadius, cy + sin(s) * secondsRadius );
+	strokeWeight(2);
+	stroke(255);
+	noFill();
+	line(cx, cy, cx + cos(m) * minutesRadius, cy + sin(m) * minutesRadius);
+	strokeWeight(4);
+	line(cx, cy, cx + cos(h) * hoursRadius, cy + sin(h) * hoursRadius);
+
+	// if statement = link text to seconds hand
+	// if( s > 0){
+	//	      noStroke();
+	//fill( 0,255, 255);
+	// s; {text(second(),cx, cy, cx + cos(s) * secondsRadius, cy + sin(s) * secondsRadius);
+	// }
+	//}
+	// Draw the minute ticks
+	strokeWeight(2);
+	beginShape(POINTS);
+	for (var a = 0; a < 360; a+=6) {
+		var angle = radians(a);
+		var x = cx + cos(angle) * secondsRadius;
+		var y = cy + sin(angle) * secondsRadius;
+		vertex (x, y) ;
+	}
+	endShape();
+	interiorNumbs();
+
+ 
+}  
+//function mouseClicked(){
+//	scale(mouseX / 300, mouseY / 300);
+//}
+
+function interiorNumbs(){
+	//translate(windowWidth/360, windowHeight/360);
+	noStroke();
+	fill(255,255, 0);
+	text(hour() % 12 + ':', cx - 60, cy - 60, cx , cy  );  // + rotate(radians(frameCount/60 ))
+	fill(255,0, 255);
+	text(minute()  + ':', cx + 20, cy + 20, cx, cy ); 
+	fill( 0,255, 255);
+	textSize(60);
+	text(second( ), cx + 60, cy + 60, cx , cy);
+}
+
+function movingBackground() {
+
+	var cx = width / 2;
+  	var cy = height / 2;
+  	var radius = min(width, height) / 2;
+  	var secondsRadius = radius * 0.72;
+	background(255);
+	stroke(10);
+	strokeWeight (1);
+	noFill();
+	// move the origin to the pivot point
+	translate(windowWidth/2, windowHeight/2); 
+	
+    for(var i = 0; i < 360; i++) {
+    push();
+    fill(200, 20);
+    strokeWeight(1);
+    rotate(radians(frameCount * i/500));
+    ellipse(300, 300,400,400); //random(1, 2.015)
+    pop();
+    }
+
+    
+    for(var i = 0; i < 50; i++) {
+    //push();
+        	if(frameCount <=40){
+    		    fill(20,40 );
+    		} 
+    		    		else {
+    		    fill(0,10 );
+    	}
+    		if(frameCount >=120){
+    		    fill( 40,60 );
+    		};
+    //fill(220,40 );
+    stroke(180 );
+    strokeWeight(1);
+    rotate(radians(frameCount / i++ ));
+
+    ellipse(0,200/4,200,200)
+    //ellipse(0,200/4,200,200);
+
+
+    //pop();
+    } 
+  
+//creates colored circle
+
+}
+
+</script>
+</body>
+</html>
+
+
+
