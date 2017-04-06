@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/addons/p5.dom.min.js" integrity="sha256-XJv4F6vIKIxDBK9yFUP0+7QP6z7AHjwNvmAS/ZsNogM=" crossorigin="anonymous"></script>
+    <script src="libraries/p5.serialport.js" type="text/javascript"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/p5.min.js" integrity="sha256-hTadFyx999S2PaNVgI6MyGaojC6fzBZb2D5GibT/Fno=" crossorigin="anonymous"></script>
+
+    <!--<script src= "https://CPassehl.github.io/fiveStrikes3.20Final.html"> </script> -->
+
+</head>
+<body>
+<p><pre>  christopher passehl
+
+<a class = "button" id = 'oneButton'  href="https://CPassehl.github.io/fiveStrikes3.20Final.html"  > click for Project 2 Part A</a>
+<p>  </p>
+<a class = "button" id = 'twoButton'  href="https://CPassehl.github.io/Clock.TestB.html "    > click for Project 2 Part B</a>
+<p>  </p>
+<a class = "button" id = 'threeButton'  href="https://CPassehl.github.io/Clocl.j5.Test.html "   > click for Project 2 Part C</a></pre></p>
+
+
+
+
+<script>
+// source attribution   
+//http://codepen.io/dmahmarian/pen/rOGNXd?editors=0010
+//http://p5js.org
+//https://github.com/processing
+
+var secondsRadius;
+var minutesRadius;
+var hoursRadius;
+var clockDiameter;
+ 
+
+
+function setup() {
+	//ellipseMode(RADIUS);
+	createCanvas(displayWidth, displayHeight);
+	stroke(255);
+
+	textFont("Source Code Pro");
+
+	var radius = min(windowWidth/ 4, windowHeight/ 4) ;
+	secondsRadius = radius * 1.25;
+	minutesRadius = radius * 1;
+	hoursRadius = radius * 0.50;
+	clockDiameter = radius * 2;
+	var cent1 = windowWidth/  250;
+	var cent2 = windowHeight/  220;  
+	cx = cent1;
+	cy = cent2;
+
+}
+
+function draw() {
+	background(10);
+  	var cent = width/2;
+	textSize(90);
+	var d = day();
+	var m = month();
+	var mm = minute();
+	var s1 = second();
+	var y = year();
+	var h = hour() % 12;
+
+	var circ1 = ellipse(cx , cy, windowWidth/80, clockDiameter/2);
+
+noStroke();
+	//text(h + ':' + mm + ':' + s1 , cent, 50);
+         //scale(-.5, -.5);                    //scale(mouseX/1500, mouseY/ 1000);     
+  // Draw the clock background
+	translate(windowWidth/2, windowHeight/2);
+    //movingBackground();			//ellipse(movingBackground());
+	//fill( 155, 155, 5, 150   );
+	//ellipse(cx, cy, 400, clockDiameter); 
+
+	// if(second() <= 10  ) {
+	// fill(0, 10    );
+	// ellipse(cx+20, cy+20,  clockDiameter , 1200)  
+	//  }  
+	// if(second() >= 10  <30     ) {
+	//   	fill(155, 155, 5, 220    );
+	//   	ellipse(cx, cy,  200 , clockDiameter )   
+	//   }
+
+	 // if(minute() <= 2  ) {
+	 //  	fill( 155, 155, 5, 150   );
+	 //  	ellipse(cx , cy,  800 , clockDiameter)   
+	 //  }
+	 //  	if(minute() >= 45   ) {
+	 //  	fill(  5, 155, 5, 150   );
+	 //  	ellipse(cx , cy,  800 , clockDiameter)   
+	 //  }
+//if(minute()<= 59) {
+
+
+	
+
+	// if(  mm <   30     ) {
+ //  		//rotate(radians(second() / 1.25 ));
+ //  		background(100, 150, 255, 150);
+
+ //  	if(  (second() <= 59)     ) {
+ // 					//background(100, 250, 160, 150);
+	// 	fill(  55, 55, 5,  110   );
+	//   	rotate(radians(second() / 2  ));
+	// 	ellipse(cx , cy, clockDiameter++/20, clockDiameter++/30) ; 
+	// 	fill(0, 155, 255, 110    );
+	// 	ellipse(cx, cy, clockDiameter++/40 , clockDiameter++/30 );
+	  
+
+	// if(  second() >=30      ) {
+	// 	fill( 90, 255, 5,  100  );
+	// 	rect(clockDiameter++ /120 , cy, clockDiameter /4, clockDiameter/2);
+	// 	fill(  5, 135, 115,  30   ); }
+	// 	ellipse(cx , cy, clockDiameter /120, clockDiameter/120);
+	// }
+ 
+ 
+
+  if(  minute() >   30     ) {
+ 		background(0, 160, 160, 150);
+	  	fill( 255, 155, 5,  100  );
+	  	rect(cx - 300 , cy - 300, clockDiameter /4, clockDiameter/2);
+	  	fill( 255, 155, 5,  150  );
+	 	rect(cx - 500 , cy - 500, clockDiameter /4, clockDiameter/2);
+	  	fill(255, 155, 255, 110    );
+	    	ellipse(cx, cy, clockDiameter++/120 , clockDiameter++/120 ); 
+	}
+
+ 	if(second() <= 59) {
+		background(100, 150, 255, 150);
+		fill(  55, 55, 5,  110   );
+	  	rotate(radians(second() / 2  ));
+		ellipse(cx , cy, clockDiameter++/20, clockDiameter++/30) ; 
+		fill(0, 155, 255, 110    );
+		ellipse(cx, cy, clockDiameter++/40 , clockDiameter++/30 );
+	  
+	if(  second() >=15      ) {
+		background(0, 250, 160, 150);
+		fill( 90, 255, 5,  100  );
+		rect(clockDiameter++ /120 , cy, clockDiameter /4, clockDiameter/2);
+		fill(  5, 135, 115,  30   );  
+		ellipse(cx , cy, clockDiameter /120, clockDiameter/120);
+		fill(  5, 100, 215,  50   );  
+		ellipse(cx , cy, clockDiameter /120, clockDiameter/120);
+		fill( 255, 155, 5,  100  );
+		rect(cx - 300 , cy - 300, clockDiameter /4, clockDiameter/2);
+
+	if(  second() >=30      ) {
+		background(0, 150, 160, 150);
+		fill( 0, 255, 55,  100  );
+		rect(clockDiameter++ /240 , cy, clockDiameter /4, clockDiameter/2);
+		fill(  5, 135, 115, 200  );  
+		// ellipse(cx , cy, clockDiameter /120, clockDiameter/120);
+		// fill(  5, 100, 215,  50   );  
+		// ellipse(cx , cy, clockDiameter /120, clockDiameter/120);
+		// fill(  55, 55, 5,  110   );
+ 
+		// ellipse(cx , cy, clockDiameter++/20, clockDiameter++/30) ; 
+		// fill(0, 155, 255, 110    );
+		// ellipse(cx, cy, clockDiameter++/40 , clockDiameter++/30 );
+	}
+
+}
+	 
+} 
+ 
+
+	// Angles for sin() and cos() start at 3 o'clock;
+	// subtract HALF_PI to make them start at the top
+	var s = map(second(), 0, 60, 0, TWO_PI) - HALF_PI;
+	var m = map(minute() + norm(second(), 0, 60), 0, 60, 0, TWO_PI) - HALF_PI; 
+	var h = map(hour() + norm(minute(), 0, 60), 0, 24, 0, TWO_PI  ) - HALF_PI;
+
+	// Draw the hands of the clock
+	stroke(255);
+	strokeWeight(1);
+	line(cx, cy, cx + cos(s) * secondsRadius, cy + sin(s) * secondsRadius );
+	strokeWeight(2);
+	stroke(255);
+	noFill();
+	line(cx, cy, cx + cos(m) * minutesRadius, cy + sin(m) * minutesRadius);
+	strokeWeight(4);
+	line(cx, cy, cx + cos(h) * hoursRadius, cy + sin(h) * hoursRadius);
+
+	// Draw the minute ticks
+	strokeWeight(4);
+	beginShape(POINTS);
+	for (var a = 0; a < 360; a+=6) {
+		var angle = radians(a);
+		var x = cx + cos(angle) * secondsRadius;
+		var y = cy + sin(angle) * secondsRadius;
+		vertex (x, y) ;
+		//if(second() <= 10) {
+		//vertex (x+50, y) ;		 
+	}
+	endShape();
+	interiorNumbs(); 
+}  
+
+function interiorNumbs(){
+	var tex1pos = windowWidth/50;
+	var tex1Hpos = windowHeight /9;
+	//translate(windowWidth/360, windowHeight/360);
+	noStroke();
+	fill(255,255, 0);
+	text(hour() % 24 + ':', tex1pos - 60, tex1Hpos - 60, tex1pos , tex1Hpos  );  // + rotate(radians(frameCount/60 ))
+		textSize(50);
+	fill(55,0, 255);
+	text(minute()  + ':', tex1pos + 20, tex1Hpos + 20, tex1pos, tex1Hpos ); 
+	fill( 0,255, 255);
+	textSize(30);
+	text(second(), tex1pos + 60, tex1Hpos + 120, tex1pos , tex1Hpos);
+}
+
+function movingBackground() {
+		ellipseMode(RADIUS);
+	var cx1 = windowWidth / 8;
+  	var cy1 = windowHeight / 8;
+  	//var radius = min(width, height) / 2;
+  	//var secondsRadius = radius * 0.72;
+	background(20);
+	//stroke(10);
+	//strokeWeight (1);
+	noFill();
+	// move the origin to the pivot point
+	//translate(windowWidth/2, windowHeight/2); 
+	
+    for(var i = 0; i < 60; i++) {
+    push();
+    fill(225, 20);
+	stroke(10, 0, 255, 40);
+	strokeWeight (1);
+    rotate(radians(frameCount * i/120)  - HALF_PI);
+    ellipse(cx1, cy1,800,400); //random(1, 2.015)
+    pop();
+
+        if(frameCount <= 360){
+        	push();
+            stroke(255, 0, 255, 40);
+			strokeWeight (1);;
+	    	rotate(radians(frameCount * i/10)  - HALF_PI);
+	    	ellipse(cx1, cy1,-100,400);
+	    	pop();
+        }
+        if(frameCount >= 360){
+        	push();
+            stroke(255, 0, 0, 140);
+			strokeWeight (1);;
+	    	rotate(radians(frameCount * i/20)  - HALF_PI);
+	    	ellipse(cx1, cy1,400,400);
+	    	pop();
+        } 
+        if(frameCount >= 720){
+        	push();
+            stroke(255, 255, 0, 140);
+			strokeWeight (1);;
+	    	rotate(radians(frameCount * i/20)  - HALF_PI);
+	    	ellipse(cx1, cy1,400,400);
+	    	pop();
+        }       
+        
+
+
+     //rotate(radians(frameCount / 36  ));
+   //       fill(255,40 );
+   //  stroke(180 );
+   // strokeWeight(1);
+
+   // ellipse(0,200/4,200,200)
+    //ellipse(0,200/4,200,200);
+
+
+    //pop();
+   // } 
+ 
+           //fill(255, 5, 5, 220   );
+ 
+ 
+ 
+ }
+}
+</script>
+</body>
+</html>
+
+
+
