@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/addons/p5.dom.min.js" integrity="sha256-XJv4F6vIKIxDBK9yFUP0+7QP6z7AHjwNvmAS/ZsNogM=" crossorigin="anonymous"></script>
+    <script src="libraries/p5.serialport.js" type="text/javascript"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/p5.min.js" integrity="sha256-hTadFyx999S2PaNVgI6MyGaojC6fzBZb2D5GibT/Fno=" crossorigin="anonymous"></script>
+ 
+ <style>
+#sketch1  {
+    /* move both sketchs to the middle of the page */
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    /*opacity: 0.8; */
+    z-index: 0;
+}
+
+#sketch2 {
+    /* move both sketchs to the middle of the page */
+    position: absolute;
+    z-index: -2;
+    top: 60%;
+    left: 10%;
+    margin-left: 0px;
+    margin-top:  0px;
+
+}
+
+div.first {    opacity: 0.5; z-index: -1; transform: rotate(-5deg); background: magenta; text-decoration: none; font-size: 40px; margin-top: -24px;}
+div#thumb1 {
+	opacity: .8; background: cyan; width: 50px; height: 50px; margin-left:30%; margin-top: -50px;
+}
+
+ </style>
+</head>
+<body>
+
+<a href = "https://cpassehl.github.io/textAlbert.html"><div class="first" id = "now" ><pre>Sarah 
+</pre></div></a>
+
+<div id="thumb1"></div>
+
+<div class = "canvas1a" id="sketch1"></div>
+<div id="sketch2"></div>
+
+
+
+<script>
+var n =60;
+var button;
+
+function setup() {
+    createCanvas(900, 600);
+    noStroke();
+
+ button = createButton('click to play game 1');
+ button.mousePressed(mouser);
+};
+
+function draw() 
+{
+  	translate(width/2, height/2);
+  	background(240, (100 + frameCount)  , 96);
+
+	for (var i=0; i<n; i++) {
+	    var z = (i + 0.35*frameCount) % n;
+		var rad = map(i, 0, n, 840, 50);
+		var r = map(z, 0, n, 10, 190);
+		var g = map(z, 0, n, 50, 220);
+		var b = map(z, 0, n, 220, 40);
+		
+
+		
+		fill(r, g, b-150);
+		ellipse(0, 0, rad + 500, rad +500, 50);
+		
+		if (frameCount >= 20) {
+		    lineMove();
+		}
+
+	}
+}
+
+function lineMove(){
+    fill(200, 5);
+	rect(5 * frameCount, 0, 300 , 3 );
+	fill(240, 5);
+	rect(45, 5 * frameCount, 300 , 3 );
+    
+}
+
+function mouser() {
+	  	background(40, (200 + frameCount)  , 96);
+}
+
+</script>
+
+</body>
+</html>
