@@ -1,0 +1,299 @@
+<!DOCTYPE html>  
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.min.js" integrity="sha256-kOMiAh3njmqfTtvuQaWkt1CORCQGcX6vspmuZL615Zk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.dom.js" integrity="sha256-ylVoD/YZjnDGXuogdMTwAI+Ez+m/48IPpUbEQsUKxtE=" crossorigin="anonymous"></script>
+    <script src="libraries/p5.serialport.js" type="text/javascript"></script>
+
+    <script src="libraries/p5.dom.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.sound.js" integrity="sha256-18fY6iwLuiiGOBx/r3c/gi1dWGoApNNQMJXFEyuLuu4=" crossorigin="anonymous"></script>
+
+    <!-- <script src="sketch.js" type="text/javascript"></script>  -->
+
+    <style> 
+    body {padding: 4%;  max-width: 2000px; margin: auto;} 
+    
+    div.imageText { font-family: "Lucida Grande", "Lucida Sans Unicode", arial, helvetica, verdana, sans-serif; padding: 3%; margin: 5%; background-color:red;  width: 65%; } 
+    div {font-family: "Source Code Pro"; font-size: 36px } 
+    
+    text {font-size: 36px}
+    canvas {margin-left: 2%;  margin: auto;  } 
+
+    </style>
+    </head>
+    <body id="mainBody">
+    <!-- <canvas id="myCanvas">      </canvas> -->
+    <!--  <div> 
+      </div>  -->
+    <div id="sketch4"></div>
+    <div id="sketch1"></div>
+    <div id="sketch2"></div>
+    <div id="sketch3"></div>
+    </body>
+
+ 
+<script>
+
+// source attribution   
+//http://codepen.io/dmahmarian/pen/rOGNXd?editors=0010
+//http://codepen.io/edhebert/pen/VpBzRo
+//http://p5js.org
+//https://github.com/processing
+//https://www.w3schools.com/jsref/met_document_getelementbyid.asp
+
+//  1.  createDiv(),
+//  2.  use position()    button.position(30, 19);
+//  3.  "innerHTML" and div.HTML
+//      document.getElementById("divS").innerHTML=("Sara"); 
+//  4.  style with CSS  
+//      document.getElementById("divS").style ="color:red; font-size:72px"; 
+//  5. canvas -- used     myCanvas.position(400, 800); 
+
+  var y = 0; 
+  var x = 60;
+  var yA = 10; 
+  var xA = 250;
+  var myDiv1;
+  var myDiv2;
+  var myDivC;
+  var button3;
+  //var myCanvas;
+
+
+  var sketch1 = function(p) { 
+    p.setup = function() {
+        var canvas1 = p.createCanvas(500, 500);
+        canvas1.parent('#sketch1');
+        canvas1.position(200,650);
+        canvas1.style('border-radius', "50%"); 
+    };
+
+    p.draw = function() {
+        p.background(251, 50, 150, 100);  //magentaish (251, 50, 150, 100)
+        p.fill(0);
+        p.ellipse(225,675, 40, 40);
+        p.fill(255, 0, 0);
+        p.rectMode(p.CENTER);
+        p.rect(p.width-random(3000) , p.height / 2, 50, 50);
+        p.rect(p.width/2, p.height-random(5000) , 50, 50); 
+
+    }; 
+};
+
+  var sketch2 = function(p) { 
+    p.setup = function() {
+        var canvas2 = p.createCanvas(500, 500);
+        canvas2.parent('#sketch2');
+        canvas2.position(650,650);
+        canvas2.style('border-radius', "50%"); 
+    };
+
+    p.draw = function() {
+        p.background(151, 250,  50);  //lime (151, 250,  50)
+        p.fill(255, 0, 0);
+        p.rectMode(p.CENTER);
+        p.rect(p.width-random(3000) , p.height / 2, 50, 50);
+        p.rect(p.width/2, p.height-random(5000) , 50, 50); 
+    }; 
+};
+
+  var sketch3 = function(p) { 
+    p.setup = function() {
+        var canvas3 = p.createCanvas(500, 500);
+        canvas3.parent('#sketch3');
+        canvas3.position(1050,650);
+        canvas3.style('border-radius', "50%"); 
+    };
+
+    p.draw = function() {
+        p.background(100, 100, 250, 100);  //periwinkle (100, 100, 250, 100)
+        p.fill(255, 0, 0);
+        p.rectMode(p.CENTER);
+        p.rect(p.width-random(3000) , p.height / 2, 50, 50);
+        p.rect(p.width/2, p.height-random(5000) , 50, 50); 
+    }; 
+};
+
+  var mySketchNo1 = new p5(sketch1);
+  var mySketchNo2 = new p5(sketch2); 
+  var mySketchNo3 = new p5(sketch3);
+
+  function setup() {
+
+    var myCanvas = createCanvas(displayWidth * .55, displayHeight/3);
+    myCanvas.parent('#sketch4');
+    textFont("Source Code Pro");
+    textAlign(CENTER);
+    myCanvas.position(200,150);
+    myCanvas.style('z-index', -1);
+
+    //myDiv = createDiv('Hello,');
+    var div = createDiv('').size(100,100);
+    div.html('', true);
+    div.id("divS"); 
+
+    myDiv2 = createDiv('');
+    myDiv2.html('', true);
+    myDiv2.id("divH");
+    myDiv2.position(100, 900); 
+
+    // myDiv1 = createDiv("Sarah loves her slinky");
+    // myDiv1.position(400, 12 );
+
+    // myDivC = createDiv();
+    // myDivC.position(400, 500 );
+    // myDivC.style("background-color", "#ff0000");
+    // myDivC.id("divC");
+    var col = color(255,0,0,200);
+    var col2 = color(0,255,0,200);
+    var col3 = color(0,150,255,200);
+    var texx = textFont("Source Code Pro");
+    var sizer = textSize(48);
+     
+    
+    button = createButton('Sarah, click this button' );
+    button.position(300, 140);
+    button.mouseClicked(changeBackgroundText); 
+    button.style ("background-color", col); 
+
+
+    button2 = createButton('click to remove circles' );
+    button2.position(900, 140);
+    button2.mouseClicked(function() { 
+      cirle1();    //myCanvas.hide()
+      });  
+    button2.style ("background-color", col3); 
+
+    button3 = createButton('to restart game, click' );
+    button3.style ("background-color", col2); 
+    button3.position(550, 140);
+    button3.mouseClicked(function() { 
+     location.reload(true); 
+     }); 
+
+
+       // var button = select('#button');
+    // button.mousePressed(function() {
+    //     location.reload(true);
+    // });
+
+      }
+
+  var cirle1 = function(){
+    stroke(0);
+    strokeWeight(2);
+        ellipse(random(1200),random(500), random(200),random(200));
+  }
+
+ 
+   
+
+//   var mouseMoved = function() {
+//     stroke(0, 0, 255);
+//     noFill();
+//     strokeWeight(.25);
+//     if(mouseY > 150){
+//       ellipse(mouseX,mouseY, 50,50);  
+//     } else   { stroke(0, 255, 0);
+//         ellipse(mouseX,mouseY, 50,50); }
+// } 
+  var mouseMoved = function() {
+    //myDiv1.style('font-size', mouseX+'px');
+    //document.getElementById("myDiv1").style =" font-size: mouseX + px";
+    //div1actionType();
+    stroke(random(78), 91, random(50));
+    strokeWeight(.5);
+    fill(random(78, 255), 91, random(100, 255), 100);
+    ellipse(mouseX*random(5),yA , 500+frameCount,500+frameCount);    
+    
+    yA = yA+5;
+
+    if(yA >= 800) { 
+      yA = random(0,200);  xA = xA + 150;
+    } 
+    // if(makeLinesMoveDown()) {
+    //   moveLinesDown();
+    // } 
+}
+
+  function div1actionType() {
+    var YYY = mouseY;
+    var texColor = 'cyan';
+    myDiv1.style('font-size', mouseX +'px');
+
+    if(YYY >=50)
+    {   myDiv1.style("rotate", mouseY - "800");
+        if('mouseX >= 100' , 'mouseX < 200'){
+    myDiv1.style("color: cyan");
+}
+}  
+}
+
+  function changeBackgroundText() {
+    var val = random(255);
+    background(val); 
+    document.getElementById("divS").innerHTML=("Hello Sarah");
+    document.getElementById("divS").style ="color:red; font-size:72px";
+}
+
+  function gotFile(file) {
+    var img = createImg(file.data).hide();
+    // Draw the image onto the canvas
+    image(img, 0, 0, width, height);
+}
+
+  function gotImage() {
+    var pict1 = 
+    image(img, 0, 0, width, height);
+  }
+
+  function makeLinesMoveDown() {
+    return xA >= displayWidth/4  ;
+}
+  function moveLinesDown() {
+  //number_of_lines_drawn = 0;
+    stroke(0, 91, 115);
+    noFill();
+    strokeWeight(.25);
+    ellipse(xA,yA, 100,100);  
+
+    yA = yA+5;
+    if(yA >= 800) { 
+      yA = mouseY; xA = mouseX; xA = xA+ random(100, 400);
+} 
+
+
+  function bigCircle(){
+    translate(displayWidth/2, displayHeight/2);
+    for(var i = 0; i > 360; i++) {
+    push();
+    //fill(200, 20);
+    strokeWeight(1);
+    rotate(radians(frameCount * i/60));
+    ellipse(x,y + random(2),200,200);
+  }
+ 
+}
+
+
+  function myDraw(){
+    beginShape(TRIANGLE_STRIP);
+    vertex(x + 100, random(0,5));
+    vertex(x + 40, 20);
+    vertex(random(0,50), 75);
+    vertex(x - 60,15);
+    vertex(70, 75);
+    vertex(80, 20);
+    vertex(90, random(0,75));
+    endShape();
+    }
+}
+ 
+
+  </script>
+
+  </html>
+
+
