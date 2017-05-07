@@ -28,22 +28,21 @@ function setup() {
   capture.size(700, 500);
 
   //vid1.hide();
-  noStroke();
+  //noStroke();
   fill(0);
 
-  //capture.hide();
+  capture.hide();
 }
 
 function draw() {
-  background(255);
+  background(capture);
   image(capture, 0, 0, 700, 500);
   filter('INVERT');
   capture.loadPixels();
   strokeWeight(8);
   stroke(226, 204, 0, 50);
-  line(0, y+150, width, y);
-  
-    stroke(226, 150, 0);
+  line(0, y+150, width, y);  
+  stroke(226, 150, 0);
   line(0, y-150, width, y);
   y++;
   if (y > height) {
