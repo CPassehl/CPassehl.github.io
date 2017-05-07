@@ -38,6 +38,7 @@ function draw() {
   background(backGd);
   image(capture, 0, 0, 700, 500);
   filter('INVERT');
+  tint(255, mouseY, mouseX);
   capture.loadPixels();
   strokeWeight(8);
   stroke(226, 204, 0, 50);
