@@ -36,10 +36,12 @@ function setup() {
 
 function draw() {
   background(backGd);
-  image(capture, 0, 0, 700, 500);
+      capture.loadPixels();
+  image(capture, 0, 0, 800, 600);
   filter('INVERT');
   tint(255, mouseY, mouseX);
-  capture.loadPixels();
+
+  image(capture, mouseX, 0, 800, 600);
   strokeWeight(8);
   stroke(226, 204, 0, 50);
   line(0, y+150, width, y);  
