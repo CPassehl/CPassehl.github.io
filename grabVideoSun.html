@@ -19,12 +19,13 @@
     var vid1;
     var capture;
     var x, y;
+    var backGd;
 
 function setup() {
   capture = createCapture(VIDEO);
   capture.size(800, 600);
   createCanvas(800, 600);
-
+  backGd = VIDEO;
   //vid1.hide();
   //noStroke();
   fill(0);
@@ -33,7 +34,7 @@ function setup() {
 }
 
 function draw() {
-  capture.background(0);
+  background(backGd);
   image(capture, 0, 0, 700, 500);
   filter('INVERT');
   capture.loadPixels();
