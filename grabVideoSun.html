@@ -39,7 +39,7 @@ function draw() {
   background(backGd);
   capture.loadPixels();
       
-  image(capture, 0, 0, 800, 600);
+  image(capture, x, y, 800, 600);
   filter('blur', 10);
   //filter('INVERT');
 
@@ -51,12 +51,12 @@ function draw() {
 //   line(x + 150, 0, width, y);  
 //   stroke(226, 150, 0);
 //   line(x + 45, y, width, y);
-//   y++;
-//   x++;
-//   if (y > height || x > width) {
-//     y = 0;
-//     x = 0;
-// }
+  y++;
+  x++;
+  if (y > height || x > width) {
+    y = 0;
+    x = 0;
+}
 }
 
 
