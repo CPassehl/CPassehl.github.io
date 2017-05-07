@@ -37,8 +37,8 @@ function setup() {
 
 function draw() {
   background(backGd);
-  capture.loadPixels(    
-      for (var y = 0; y < height; y++) {
+  capture.loadPixels();
+          for (var y = 0; y < height; y++) {
         for (var x = 0; x < width; x++) {
       var index = (x + y * width)*4;
       pixels[index+0] = x;
@@ -46,8 +46,8 @@ function draw() {
       pixels[index+2] = y;
       pixels[index+3] = 255;      
     }
-  });
-    updatePixels();
+  }
+
       
   image(capture, x++, y, 800, 200);
   filter('blur', 30);
@@ -55,7 +55,7 @@ function draw() {
 
   tint(255, mouseY, mouseX, 180);
     
-
+    updatePixels();
 
 
   //image(capture, mouseX, 0, 800, 600);
