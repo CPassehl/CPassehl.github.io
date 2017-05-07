@@ -39,8 +39,8 @@ function draw() {
   background(backGd);
   capture.loadPixels();
       
-  image(capture, x, y, 800, 600);
-  filter('blur', 10);
+  image(capture, x, y, 800, 200);
+  filter('blur', 80);
   //filter('INVERT');
 
   tint(255, mouseY, mouseX, 180);
