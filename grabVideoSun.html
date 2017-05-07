@@ -42,15 +42,17 @@ function draw() {
   filter('DILATE');
   tint(255, mouseY, mouseX, 140);
 
-  image(capture, mouseX, 0, 800, 600);
+  image(capture, mouseY, 0, 800, 600);
   strokeWeight(8);
   stroke(226, 204, 0, 50);
-  line(0, y+150, width, y);  
+  line(x + 150, 0, width, y);  
   stroke(226, 150, 0);
-  line(0, y-150, width, y);
+  line(x + 45, y, width, y);
   y++;
-  if (y > height) {
+  x++;
+  if (y > height || x > width) {
     y = 0;
+    x = 0;
 }
 }
 
