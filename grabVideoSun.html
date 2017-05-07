@@ -36,10 +36,11 @@ function setup() {
 
 function draw() {
   background(backGd);
-      capture.loadPixels();
+  capture.loadPixels();
   image(capture, 0, 0, 800, 600);
-  filter('INVERT');
-  tint(255, mouseY, mouseX);
+  //filter('INVERT');
+  filter('DILATE');
+  tint(255, mouseY, mouseX, 140);
 
   image(capture, mouseX, 0, 800, 600);
   strokeWeight(8);
