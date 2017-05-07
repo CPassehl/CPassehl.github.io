@@ -27,7 +27,7 @@ function setup() {
   capture.size(800, 600);
   createCanvas(800, 600);
   backGd = VIDEO;
-    frameRate(15);
+    frameRate(40);
   //vid1.hide();
   //noStroke();
   fill(0);
@@ -40,7 +40,7 @@ function draw() {
   capture.loadPixels();
   image(capture, 0, 0, 800, 600);
   //filter('INVERT');
-  filter('DILATE');
+  //filter('DILATE');
   tint(255, mouseY, mouseX, 140);
 
   image(capture, mouseY, 0, 800, 600);
