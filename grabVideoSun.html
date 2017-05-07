@@ -23,9 +23,9 @@
 function setup() {
   createCanvas(800, 600);
   // specify multiple formats for different browsers
-  vid1 = createCapture(VIDEO);
+  capture = createCapture(VIDEO);
   //createVideo(['assets/fingers.mov','assets/fingers.webm']);
-  vid1.size(700, 500);
+  capture.size(700, 500);
 
   //vid1.hide();
   noStroke();
@@ -36,9 +36,9 @@ function setup() {
 
 function draw() {
   background(255);
-  image(vid1, 0, 0, 700, 500);
+  image(capture, 0, 0, 700, 500);
   filter('INVERT');
-  vid1.loadPixels();
+  capture.loadPixels();
   strokeWeight(8);
   stroke(226, 204, 0, 50);
   line(0, y+150, width, y);
