@@ -33,7 +33,7 @@ function setup() {
 }
 
 function draw() {
-  background() = capture;
+  capture.background(0);
   image(capture, 0, 0, 700, 500);
   filter('INVERT');
   capture.loadPixels();
