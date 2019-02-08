@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<style>
+
+// body {
+  transform: rotate(90deg);
+  background-color: rgba(200, 200, 150, .3);
+   display: grid;  
+  justify-content: center;
+  align-items: left;  
+} //
+
+
+// .triangle-container{
+  width: 500px;
+  margin: auto;
+  text-align:center;
+    } 
+ .triangle{ 
+    fill: transparent;
+    stroke: white;
+    stroke-width: 28;
+  } //
+
+ 
+
+.square1 {
+  height: 320px;
+  width: 320px;
+  background-color: #0074d9;
+  display: flex;
+  margin-bottom: 10px;
+  float: left;
+  margin-right: -450px;
+  opacity: 0.1;
+}
+
+.circle1 { 
+ background-color: rgb(230, 230, 200);
+  height: 80%;
+  width: 50%;
+ padding: 1em 1em 5em 1em;
+ Margin-top: 2em;
+ Font-size: 2em;
+  opacity: 0.4;
+   //transform: rotate(90deg);//
+}
+p {
+transform: rotate(90deg);
+
+Font-size: 3em;
+}
+
+.triangle2 { 
+  width: 0px;
+  height: 0px;
+  opacity: 1;
+  margin-right: 50px;
+  margin-left: -50px;
+  border-style: solid;
+  border-width: 340px 520px 340px 0;
+  border-color: white red white white; 
+}
+ body, html {
+  height: 100%;
+  background-color: rgb(235, 225, 200 );
+} 
+.grid-container {
+  display: grid;
+  grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr) minmax(70px, 1fr);
+  grid-gap: 10px;
+/*  background-color: #2196F3;*/
+
+  padding: 6em 1em 0 3em;
+}
+
+.grid-container > div {
+  border: 1px solid black; 
+  text-align: left;
+}
+.text1 {
+   font-size: 2em;
+  padding: 8em;
+}
+.text2 {
+ background-color: rgba(200,200,200, .5);
+ font-size: 4em;
+ opacity: .6;
+ padding: 1em;
+ 
+  
+}
+</style>
+<body>
+  <div class="grid-container">
+  <div id = "box" class="text1"> </div>
+  <div id = "box" class="text2"> </div>
+  <div id = "box" class="circle1" ><p> </p>  </div> 
+
+ </div>
+<!-- <div class="square1"> </div>-->
+
+<!-- <div class="circle1"> 
+  <div class="triangle2">  </div>    
+    <div class="triangle1">  </div>  --> 
+
+<!-- <div class="triangle-container">
+    <svg height="1500" width="1500">
+        <polygon points="180,90 100,700 400,400" class="triangle" />
+    </svg>
+  </div> -->
+
+<!--  -->
+<script>
+// text for splitting into array //
+var wordsString = "It was still early so I walked on to view Telluride and its surroundings. The streets appeared strangely deserted and silent. Then I saw a hearse approaching slowly followed by two lines of men marching sedately. A funeral, undoubtedly of a prominent member of the community. At store fronts the proprietors stood watching as the cortege wound its solemn way to the small cemetery on the hillside. Thus the men of Telluride paid homage and said farewell to the leading madam of their underworld, in her way the towns best known citizen. I continued my walk toward the end of town, half a mile away. The road ran past the mill of the Liberty Bell Mine and a short distance farther to the Smuggler Union, then the little settlement of Pandora where it abruptly ended";
+// var for string split. and pattern for splitting. //
+//var wordsArray = wordsString.split("th");//
+
+var wordsString2 = "For hundreds of years. the Uncompahgre Utes lived. in what is now southwest Colorado. using Telluride’s Valley Floor. for their summer camps. despite an earlier treaty with the US government. that guaranteed the Ute people would retain all of Colorado Territory west of longitude 107 west. in 1881 the US Army. forcibly removed them from their native lands. in the San Miguel River Basin. quest for westward expansion. The Uncompahgre Utes were relocated to Utah and made part of the Ute Tribe on the Uintah and Ouray reservation. The state of Colorado has never apologized to the Uncompahgre Utes for their forced removal. Last week, San Miguel County Commissioners approved a resolution offering an apology to the Utes.San Miguel County apologizes to the Uncompahgre Ute people and their descendants for their forced removal from western Colorado in 1881 and their relocation to Utah,” the resolution says.The county also extends a formal apology, government to government, to the Ute Indian Tribe of the Uintah and Ouray reservation.County Commissioner Art Goodtimes worked on the resolution for many months before bringing it to the rest of the board.Even though San Miguel County wasn’t formed until 1882 when it split off from Ouray County, the incident occurred on what is now San Miguel County land, Goodtimes said.I want to start the process of reconciliation,” Goodtimes said.“We have never owned up to the fact that we illegally removed people from here … When you look at the history, it’s clearly illegal what was done.It’s way past time (for an apology).”Goodtimes worked with Uncompahgre Ute Roland McCook on drafting the resolution. McCook lived on the Fort Duchesne, Utah reservation most of his life. He now lives in Montrose and educates people in the history of his tribe, giving lectures and organizing dances and celebrations. McCook also served on the tribal council government and was a member of the Smithsonian Museum’s repatriation review committee, working to get human remains and sacred objects returned to the tribes they were taken from.“I’m appreciative of (Goodtimes’) actions and I’m sure the tribes will be also once they find out about that,” McCook said.McCook, however, would like to see the county do something more to commemorate the native people who inhabited the area long before Europeans.“An apology is like the wind,” McCook said It disappears as soon as it’s said. I would want to have something more substantial such as a park or a naming of something solid.”And that’s just what San Miguel County plans to do. According to the resolution, the county intends to dedicate a plaque in Placerville Park in remembrance of the removal of the Uncompahgre Utes since the warm springs in Placerville were a site for the Utes and historical records show Chief Ouray and his wife Chipeta camped there.“We would like to have a little ceremony and a dedication,” Goodtimes said.The idea to offer a Ute apology came to Goodtimes when he attended a conference at the Center of the American West in Boulder on the 200th anniversary of the founding of the BLM. A presenter explained that reconciliation consists of five parts: the offense, an apology, acceptance of the apology, restitution and finally, reconciliation. Goodtimes hopes the county’s apology will set the wheels in motion to make amends.“We have never really had a reconciliation over the Native American genocide,” Goodtimes said.";
+
+var wordsString3 = "Sen. Elizabeth Warren said Tuesday that she was sorry that she identified herself as a Native American for almost two decades, reflecting her ongoing struggle to quiet a controversy that continues to haunt her as she prepares to formally announce a presidential bid.Her comments more fully explain the regret she expressed last week to the chief of the Cherokee Nation, the first time she’s said she was sorry for claiming American Indian heritage.The private apology was earlier reported as focusing more narrowly on a DNA test she took to demonstrate her purported heritage, a move that prompted a ferocious backlash even from many allies. Warren will be vying to lead a party that has become far more mindful of nonwhite voters and their objections to misuse of their culture.I can’t go back, Warren said in an interview with The Washington Post. But I am sorry for furthering confusion on tribal sovereignty and tribal citizenship and harm that resulted.";
+
+var wordsArray = wordsString.split(". ", 3  );
+var wordsArray2 = wordsString2.split(".");
+var wordsArray3 = wordsString3.split(" ");
+
+var getRandomWord = function() {
+  return wordsArray[Math.floor(Math.random() * wordsArray.length)];
+};
+var getRandomWord2 = function() {
+  return wordsArray2[Math.floor(Math.random() * wordsArray.length * 50)];       // Math.floor(Math.random() / wordsArray.length ) //
+};
+
+var getRandomWord3 = function() {
+  return wordsArray3[Math.floor(Math.random() * wordsArray.length * 50)];       // Math.floor(Math.random() / wordsArray.length ) //
+};
+
+$(function() { // after page load
+  setInterval(function(){
+    $(('.text1')).fadeOut(0, function(){
+      $(this).html(getRandomWord()).fadeIn(0);
+    });
+  // 3 seconds
+  }, 3000);
+});
+
+$(function() { // after page load
+  setInterval(function(){
+    $(('.text2')).fadeOut(0, function(){
+      $(this).html(getRandomWord2()).fadeIn(0);
+    });
+  // 5 seconds
+  }, 1000);
+});
+
+$(function() { // after page load
+  setInterval(function(){
+    $(('.circle1 p')).fadeOut(0, function(){
+      $(this).html(getRandomWord3()).fadeIn(0);
+    });
+  // 5 seconds
+  }, 1000);
+});
+
+</script>
+</body>
+
+
+
+	
+</body>
+</html>
