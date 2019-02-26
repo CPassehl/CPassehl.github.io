@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+</head>
+<style>
+
+body {
+  transform: rotate(90deg);
+   /*  height: 200%;
+  width: 90%;
+border: solid 6px black; */
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text1 {
+  font-size: 220px;
+  font-style: italic;
+  float: left;
+  color: red;
+  transform: rotate(-90deg);
+  margin : -15px;
+}
+
+.square1 {
+  font-size: 120px;
+  font-family: helvetica;
+  height: 320px;
+  width: 320px;
+  background-color: #0074d9;
+  display: flex;
+  margin-bottom: 10px;
+ /* float: left; */
+  margin-right: 0px;
+    margin-left: 100px;
+  opacity: 1;
+}
+
+.circle1 {
+  transform: rotate(-90deg);
+  background-color: yellow;
+  height: 450px;
+  width: 450px;
+  border-radius: 50%;
+  float: right;
+  opacity: 0.4;
+  font-size: 48px;
+}
+
+.triangle1 {
+	 /* transform: rotate(90deg); */ 
+  width: 0px;
+  height: 0px;
+  opacity: .2;
+  margin-right: 50px;
+  margin-left: -50px;
+  border-style: transparent;
+  border-width: 5px 450px 5px 0;
+  border-color: 0 0 0 0;
+}
+.triangle2 {
+  width: 0px;
+  height: 0px;
+  opacity: 1;
+  margin-right: 50px;
+  margin-left: -50px;
+  border-style: solid;
+  border-width: 340px 520px 340px 0;
+  border-color: white red white white; 
+}
+body, html {
+  height: 100%;
+}
+</style>
+<body>
+ <div class="square1"> </div>
+<div class="text1"> </div>
+<div class="circle1"> </div>
+<!--<div class="square1 triangle2">  </div>
+<div class="triangle1">  </div>
+-->
+ 
+
+<script>
+// text for splitting into array //
+var wordsString = "It was still early so I walked on to view Telluride and its surroundings. The streets appeared strangely deserted and silent. Then I saw a hearse approaching slowly followed by two lines of men marching sedately. A funeral, undoubtedly of a prominent member of the community. At store fronts the proprietors stood watching as the cortege wound its solemn way to the small cemetery on the hillside. Thus the men of Telluride paid homage and said farewell to the leading madam of their underworld, in her way the towns best known citizen. I continued my walk toward the end of town, half a mile away. The road ran past the mill of the Liberty Bell Mine and a short distance farther to the Smuggler Union, then the little settlement of Pandora where it abruptly ended"; 
+// var for string split. and pattern for splitting. //
+var wordsArray = wordsString.split(" ");
+var wordsArray2 = wordsString.split(" the ");
+var wordsArray3 = wordsString.split(" and ");
+
+var getRandomWord = function() {
+  return wordsArray[Math.floor(Math.random() * wordsArray.length)]; };
+var getRandomWord2 = function() {
+  return wordsArray2[Math.floor(Math.random() * wordsArray2.length)]; };
+var getRandomWord3 = function() {
+  return wordsArray3[Math.floor(Math.random() * wordsArray3.length)];
+}; 
+
+$(function() { // after page load
+  setInterval(function(){
+    $('.square1' ).fadeOut(0, function(){
+      $(this).html(getRandomWord2()).fadeIn(0);
+    });
+  // 5 seconds
+  }, 5000);
+});
+
+$(function() { // after page load
+  setInterval(function(){
+    $('.text1' ).fadeOut(0, function(){
+      $(this).html(getRandomWord()).fadeIn(0);
+    });
+  // 5 seconds
+  }, 8000);
+});
+$(function() { // after page load
+  setInterval(function(){
+    $('.circle1' ).fadeOut(0, function(){
+      $(this).html(getRandomWord3()).fadeIn(0);
+    });
+  // 5 seconds
+  }, 3000);
+});
+
+</script>
+
+	
+</body>
+</html>
