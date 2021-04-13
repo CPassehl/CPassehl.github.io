@@ -31,9 +31,9 @@ SOURCES for code:  Paper.js is distributed under the permissive MIT License:Copy
  
 <canvas id="myCanvas" tabindex='1' resize></canvas>
 
-<audio id="myAudio"   src="CPassehl.github.io/24hours.mp3" type="audio/mpeg" autoplay loop=true   >
+<audio id="myAudio"   src="CPassehl.github.io/24hours.mp3" type="audio/mpeg"  loop=true   >
 </audio>
-myAudio.play();
+ 
  
 
 <script type="text/paperscript" canvas="myCanvas">
@@ -99,6 +99,8 @@ function onFrame(event) {
 
 
   var timeSound = document.getElementById("myAudio");
+  var audio = new Audio('CPassehl.github.io/24hours.mp3');
+   audio.play();
   
   // begin mouse + key event code
   
@@ -115,7 +117,7 @@ tool.onKeyDown = function(event) {
 		// begin mouse move for element manipulation 
 function onMouseMove(event2) {
 	//alert("ok");
-	myAudio.play();
+	 
 	var i;
 	for (var i = 0; i < 30; i++) {
 	document.getElementById("myCanvas").style.backgroundColor = "blue";
