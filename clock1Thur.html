@@ -93,15 +93,20 @@ function onFrame(event) {
 	}
 }
 
-		// begin mouse + key event code
-  var x = document.getElementById("myAudio");
+// get audio
+
+
+  var timeSound = document.getElementById("myAudio");
+  
+  // begin mouse + key event code
+  
   tool.onMouseDown = function pauseAudio() {
- 	x.pause();
+ 	timeSound.pause();
   }
 tool.onKeyDown = function(event) {
     if (event.key == 'space') {
-	x.play() ;
-	x.loop = true;
+	timeSound.play() ;
+	timeSound.loop = true;
 	}
 }
 
