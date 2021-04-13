@@ -99,9 +99,11 @@ function onFrame(event) {
 
 
   var timeSound = document.getElementById("myAudio");
-  var audio = new Audio('CPassehl.github.io/24hours.mp3');
-   audio.play();
-  
+ 
+   
+   var audioElement = new Audio('CPassehl.github.io/24hours.mp3');
+    audioElement.play();
+    
   // begin mouse + key event code
   
   tool.onMouseDown = function pauseAudio() {
