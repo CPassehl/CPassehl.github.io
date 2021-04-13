@@ -104,6 +104,11 @@ function onFrame(event) {
    var audioElement = new Audio('CPassehl.github.io/24hours.mp3');
     audioElement.play();
     
+    audioElement.addEventListener('loadeddata', () => {
+  let duration = audioElement.duration;
+  // The duration variable now holds the duration (in seconds) of the audio clip
+})
+    
   // begin mouse + key event code
   
   tool.onMouseDown = function pauseAudio() {
