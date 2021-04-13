@@ -98,13 +98,12 @@ function onFrame(event) {
 // get audio
 
 
-  //var timeSound
-     var audioElement = document.getElementById("myAudio");
+ var timeSound  = document.getElementById("myAudio");
  
-    audioElement.play();
+    timeSound.play();
     
-    audioElement.addEventListener('loadeddata', () => {
-  let duration = audioElement.duration;
+    timeSound.addEventListener('loadeddata', () => {
+  let duration = timeSound.duration;
   // The duration variable now holds the duration (in seconds) of the audio clip
 })
     
