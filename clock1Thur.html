@@ -31,12 +31,14 @@ SOURCES for code:  Paper.js is distributed under the permissive MIT License:Copy
  
 <canvas id="myCanvas" tabindex='1' resize></canvas>
 
-<audio id="myAudio"   src="CPassehl.github.io/24hours.mp3" type="audio/mpeg"  loop=true   >
-</audio>
+//<audio id="myAudio"   src="CPassehl.github.io/24hours.mp3" type="audio/mpeg"  loop=true   >
+//</audio>
  
- <button onclick="play()">Play Audio</button>
+<button onclick="play()">Play File</button>
+<audio id="audio" src="https://CPassehl.github.io/24hours.mp3" type="audio/mpeg"></audio>
 
 <script type="text/paperscript" canvas="myCanvas">
+let play = function(){document.getElementById("myAudio").play()}
  
 
 document.getElementById("cont").addEventListener("click", function(){
