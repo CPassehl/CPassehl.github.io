@@ -34,7 +34,7 @@ SOURCES for code:  Paper.js is distributed under the permissive MIT License:Copy
 <audio id="myAudio"   src="CPassehl.github.io/24hours.mp3" type="audio/mpeg" autoplay loop=true   >
 </audio>
 myAudio.play();
-alert('play');
+ 
 
 <script type="text/paperscript" canvas="myCanvas">
  
@@ -115,6 +115,7 @@ tool.onKeyDown = function(event) {
 		// begin mouse move for element manipulation 
 function onMouseMove(event2) {
 	//alert("ok");
+	myAudio.play();
 	var i;
 	for (var i = 0; i < 30; i++) {
 	document.getElementById("myCanvas").style.backgroundColor = "blue";
