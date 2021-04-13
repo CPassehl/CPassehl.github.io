@@ -28,15 +28,15 @@ SOURCES for code:  Paper.js is distributed under the permissive MIT License:Copy
 <body>
 
     <div id="mouseText"><pre><span>   ◊ clock.concept     ◊ move the mouse      ◊  press space bar to play/resume audio.   ◊ click canvas to pause audio.                               </span><span id = "cont"> 	◊ contact me. </span><span id="demo"><pre>  </span></div>
- 
+ <button onclick="playAudio()" type="button">Play Audio</button>
+<button onclick="pauseAudio()" type="button">Pause Audio</button>
     <canvas id="myCanvas" tabindex='1' resize></canvas>
 
  <audio id="myAudio"   >
-    <src="CPassehl.github.io/24hours.mp3" type="audio/mpeg"  loop=true>
+    <src="https://cpassehl.github.io/24hours.mp3" type="audio/mpeg"  loop=true>
  </audio>
  
-<button onclick="playAudio()" type="button">Play Audio</button>
-<button onclick="pauseAudio()" type="button">Pause Audio</button>
+
 
 <script>
    var timeSound  = document.getElementById("myAudio");
