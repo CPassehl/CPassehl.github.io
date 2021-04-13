@@ -29,29 +29,29 @@ SOURCES for code:  Paper.js is distributed under the permissive MIT License:Copy
 
     <div id="mouseText"><pre><span>   ◊ clock.concept     ◊ move the mouse      ◊  press space bar to play/resume audio.   ◊ click canvas to pause audio.                               </span><span id = "cont"> 	◊ contact me. </span><span id="demo"><pre>  </span></div>
 
-<button onclick="playAudio()" type="button">Play Audio</button>
-<button onclick="pauseAudio()" type="button">Pause Audio</button>
+// <button onclick="playAudio()" type="button">Play Audio</button>
+// <button onclick="pauseAudio()" type="button">Pause Audio</button>
 
     <canvas id="myCanvas" tabindex='1' resize></canvas>
 
  <audio id="myAudio"   >
- <source src="https://passehldesigntest.com/wp-content/uploads/2021/04/24hours.mp3" allow="autoplay" type="audio/mpeg" ></source>
+ <source src="https://passehldesigntest.com/wp-content/uploads/2021/04/24hours.mp3" allow="autoplay" type="audio/mpeg" loop=true ></source>
  </audio>
  
 
 
-<script>
-   var timeSound  = document.getElementById("myAudio");
+//<script>
+ //  var timeSound  = document.getElementById("myAudio");
  
   
-  function playAudio() { 
-  timeSound.play(); 
-} 
+ // function playAudio() { 
+ // timeSound.play(); 
+//} 
 
-function pauseAudio() { 
-  timeSound.pause(); 
-} 
-</script>
+//function pauseAudio() { 
+ // timeSound.pause(); 
+//} 
+//</script>
 
 
 
@@ -117,30 +117,23 @@ function onFrame(event) {
 // get audio
 
 
-  //  var timeSound  = document.getElementById("myAudio");
-    //timeSound.play();
+  var timeSound  = document.getElementById("myAudio");
+  timeSound.play();
     
 
     
   // begin mouse + key event code
-  
-//  function playAudio() { 
- // timeSound.play(); 
-//} 
 
-//function pauseAudio() { 
- // timeSound.pause(); 
-//} 
   
-//  tool.onMouseDown = function pauseAudio() {
- //	timeSound.pause();
- // }
-//tool.onKeyDown = function(event) {
-//    if (event.key == 'space') {
-//	timeSound.play() ;
-//	timeSound.loop = true;
-//	}
-//}
+   tool.onMouseDown = function pauseAudio() {
+  	timeSound.pause();
+  }
+ tool.onKeyDown = function(event) {
+     if (event.key == 'space') {
+ 	timeSound.play() ;
+ 	timeSound.loop = true;
+ 	}
+  }
 
 		// begin mouse move for element manipulation 
 function onMouseMove(event2) {
