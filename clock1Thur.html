@@ -5,13 +5,17 @@ SOURCES for code:  Paper.js is distributed under the permissive MIT License:Copy
 <title>Clock</title>
 <head>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.15/paper-full.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
+	
 #myCanvas[resize] {
     background-color: black;
     width: 100%;
     height: 100%;
 }
 #mouseText {
+    font-family: 'Share Tech Mono', monospace;
     display: inline ;
     position: fixed;
     background-color: yellow;
@@ -31,7 +35,7 @@ SOURCES for code:  Paper.js is distributed under the permissive MIT License:Copy
 </head>
 <body>
 
-    <div id="mouseText"><pre>    ◊ time.      ◊ move the mouse      ◊  press space bar to play/resume audio.   ◊ click canvas to pause audio.                                <span id = "cont"> 	◊ contact me. </span><span id="demo"><pre>  </span></pre></div>
+    <div id="mouseText">     ◊ time.      ◊ move the mouse      ◊  press space bar to play/resume audio.   ◊ click canvas to pause audio.                                <span id = "cont"> 	◊ contact me. </span><span id="demo"><pre>  </span> </div>
 
  
 
