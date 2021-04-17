@@ -44,7 +44,7 @@ SOURCES for code:  Paper.js is distributed under the permissive MIT License:Copy
 </style>
 </head>
 <body>
-<div id="mouseText">     T &nbsp &nbsp I &nbsp &nbsp M &nbsp &nbsp E &nbsp &nbsp &nbsp &nbsp &nbsp   ◊ <em id="clickIt" style="color:yellow;font-size:1.2em;"> &#8473;ress space bar to play audio.</em> &nbsp &nbsp &nbsp ◊<em style="color:red;font-size:1.2em;"> click canvas to pause audio.</em>    &nbsp &nbsp &nbsp &nbsp    <!--> ◊ move the mouse for color change  </>     &nbsp &nbsp                     <span id = "cont">  	◊ contact me. </span><span id="demo">   </span> </div>
+<div id="mouseText">     T &nbsp &nbsp I &nbsp &nbsp M &nbsp &nbsp E &nbsp &nbsp &nbsp &nbsp &nbsp   ◊ <em id="clickIt" style="color:yellow;font-size:1.2em;"> &#8473;ress space bar to play audio</em> &nbsp &nbsp &nbsp &nbsp ◊<em style="color:red;font-size:1.2em;"> click canvas to pause audio</em>    &nbsp &nbsp &nbsp &nbsp    <!--> ◊ move the mouse for color change  </>     &nbsp &nbsp                     <span id = "cont">  	◊ contact me. </span><span id="demo">   </span> </div>
   
 <canvas id="myCanvas" tabindex='1' resize></canvas>
 	
@@ -147,7 +147,7 @@ function onMouseMove(event2) {
 	 
 	var i;
 	for (var i = 0; i < 30; i++) {
-	document.getElementById("myCanvas").style.backgroundColor = "red + Color.random()";
+	document.getElementById("myCanvas").style.backgroundColor = "red ";
 	text4.opacity = 0.25;
 	text4.rotate(25);
     var vector4 = destination3 - text4.position + 300;
@@ -158,7 +158,7 @@ function onMouseMove(event2) {
 		destination3 = Point.random( ) * view.size;
 	}
 	if (vector4.length > 20) {
-		document.getElementById("myCanvas").style.backgroundColor = new Color.random()" ;
+		document.getElementById("myCanvas").style.backgroundColor =  "Color.random()" ;
 	}
 	if (vector4.length > 45) {
 		document.getElementById("myCanvas").style.backgroundColor = "black";
