@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.min.js" integrity="sha256-kOMiAh3njmqfTtvuQaWkt1CORCQGcX6vspmuZL615Zk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.dom.js" integrity="sha256-ylVoD/YZjnDGXuogdMTwAI+Ez+m/48IPpUbEQsUKxtE=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Overpass+Mono&display=swap" rel="stylesheet">
+    <style>
+
+    body {
+      max-width: 3700px;
+      margin: auto;
+      font-family: 'Overpass Mono', monospace;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    width: 60%;
+    margin-left: 0px;
+  }
+}
+
+    </style>
+    </head>
+
+    <body>
+    <div class="div1">
+
+    <script type="text/javascript">
+    var words = ["you are loved", "mother", "son", "you are loved", "sister","loved you are ", "father", "wife", "friend", "buddy", "brother", "daughter", "husband", "you are loved" ];
+
+    var wordsB = [ "forever" ];
+
+    var index = 0;
+    var indexB = 0;
+
+    function setup() {
+      createCanvas(windowWidth , windowHeight );  //var div1 =
+      textFont('Overpass Mono');
+      frameRate(2);
+    }
+
+    function draw() {
+
+      background(random(50), random(50) ,random(100), 100); //background(random(250), 150+(sin(frameCount/10)*50) , 400-frameCount, 50);
+      textSize( 75  + random(10, 150) );
+      stroke(random(10, 200),random(10, 200),random(10, 200), 50);
+      // noFill();
+      fill(random(  255),random(250),random( 150), 100);
+
+      // textSize(32);
+      text(words[index], random(100,712), 500);
+
+
+      index = floor(random(words.length));
+      if (index == words.length) {
+        index = 0;
+  }
+
+
+    //  textSize( 35  + random(100, 500) );
+      fill(random(55),random(250),random( 250), 100);
+      textSize( random(12, 250));
+      text(wordsB[indexB], random( 600, 1000), 1000);
+
+      indexB = floor(random(wordsB.length));
+      if (indexB == wordsB.length) {
+        indexB = 0;
+
+  }
+
+}
+      function windowResized() {
+      resizeCanvas(windowWidth, windowHeight);
+}
+
+    </script>
+
+
+</div>
+</body>
+</html>
