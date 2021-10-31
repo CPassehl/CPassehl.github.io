@@ -4,14 +4,21 @@
 
     body {
       margin: auto;
-      width: 50%;
-      min-width:50%;
+      max-width:50%;
+      width: 60%;
       font-family:courier;
       padding: 1em;
       line-height: 2.15em;
       font-size: 17px;
       letter-spacing: normal;
       color: red;
+    }
+    @media screen and (max-width: 700px) and (min-width: 200px) {
+       div.drawingtest #cpdrawing  {
+        width:150%;
+        background: black;
+      }
+
     }
 
 	  .Sunday {background-color:orange;}
@@ -20,15 +27,15 @@
       a:hover   {color:white; background-color:transparent; text-decoration:underline}
       a:active  {color:yellow; background-color:transparent; text-decoration:underline}
 
-    .drawingtest {  max-width: 70%; padding: 1em; margin:auto;   }
+    .drawingtest {  max-width:70%;   padding: 1em; margin:auto;    }
 
-  	#cpdrawing {background-color: black;  border-style: dotted; border-color: black; border-width: 10px;  width:100%;     }
+  	img#cpdrawing {background-color: black;  border-style: dotted; border-color: black; border-width: 10px; width:100%;   }
 
    	#hughithome { max-width: 50%;  margin:auto;      border-style: solid; border-color: black; border-width: 3px; padding: 20px;    }
 
-   	.hug { max-width: 70%;  float: left;    padding: 20px;  font-size:3em; font:courier; border-style: solid; border-color: black; border-width: 3px;}
+   	.hug { max-width: 60%;  float: left;  padding: 20px;   font-size:3em; font:courier; border-style: solid; border-color: black; border-width: 3px;}
 
-  	.hit {max-width: 80%; float: right;  padding: 20px; font-size:3em; font:courier;
+  	.hit {max-width: 80%; float: right;  padding: 20px;  ; font-size:3em; font:courier;
       border-style: solid; border-color: black; border-width: 3px;     }
 
     .broken { font-size:2.25em; font:courier;
@@ -44,7 +51,9 @@
   <body>
 
   	<div class="drawingtest"   >
-   		<img id="cpdrawing"  src="https://cpassehl.github.io/cp.driving1web.jpg"  > <br><br></a>
+
+   		<img id="cpdrawing" src="https://cpassehl.github.io/cp.driving1web.jpg"></img> <br><br></a>
+
   	</div>
 
     <! div id="hughithome"  >
@@ -59,19 +68,14 @@
     <div id="spacer" style="  width:1 px;"></div>
 
     </div>
-<br><br><br><br><br><br>
-<! div  class = "broken" clicktimes=0 >   </div>
+    <br><br><br><br><br><br>
+    <! div  class = "broken" clicktimes=0 >   </div>
 
-</div>
+    </div>
 
-<div id= "rude" class="howrude1" clicktimes=0 >
-  <div>
-</div>
-
-
-
-
-
+    <div id= "rude" class="howrude1" clicktimes=0 >
+    <div>
+    </div>
 
   	<audio src="https://cpassehl.github.io/owww1.mp3" id="oww"> </audio>
   	<audio src="https://cpassehl.github.io/that hurt.mp3" id="hurt"> </audio>
@@ -87,14 +91,11 @@
       var nowClicked = box.getAttribute('clicktimes');
       if (nowClicked == '1') {
         document.getElementById("cpdrawing").src = "https://CPassehl.github.io/cp.driving3web.jpg";
-
           box.innerText = 'thank you for your kind gesture. Wait for a surprise.';
           setTimeout(function(){window.location = "https://cpassehl.github.io/indexCP.html";},2500);
       }
 
       });
-
-
 
     var boxA = document.querySelector('div.hit' );
 
@@ -122,13 +123,9 @@
           boxA.innerText =
           'Broken! You can no longer play! Your agressiveness has broken the game. You are not a winner like Donald Trump, but you are not a loser. You just need to chill dude. Maybe read something from the book of Tao. Maybe get out and enjoy nature.';
 
-
       document.getElementById("cpdrawing").src = "https://cpassehl.github.io/cp.drivingBweb.jpg";
       document.getElementById("quitit").play() ;
-
       }
-
-
   });
 
   var boxC = document.querySelector('div.howrude1');
@@ -147,40 +144,8 @@
     });
   </script>
 
+  </wrapper>
 
-<!--<script>
-document.getElementById("hug").addEventListener('click', function() {
-    document.getElementById("cpdrawing").src = "cp.driving3web.jpg ";
-    document.getElementById("hug").innerText = "thank you for your kind gesture. click again for a gift";
-    setTimeout(function(){window.location = "https://cpassehl.github.io/indexCP.html";},1000);
-})
-document.getElementById("hit").addEventListener('click', function() {
-    document.getElementById("cpdrawing").src = "cp.driving2web.jpg";
-	document.getElementById("hit").innerText = "kick me";
-	document.getElementById("oww").play() ;
-	document.getElementById("hit").id = "kick" ;
+  </body>
 
-    document.getElementById("kick").addEventListener('click', function() {
-    	document.getElementById("cpdrawing").src = "cp.driving1web.jpg";
-        document.getElementById("hurt").play() ;
-    	document.getElementById("kick").innerText = "fool";
-    	document.getElementById("kick").id = "punch";
-        document.getElementById("punch").addEventListener('click', function() {
-            document.getElementById("cpdrawing").src
-             = "cp.driving2web.jpg";
-            document.getElementById("quitit").play() ;
-            document.getElementById("punch").innerText = "moron";
-        })
-    } );
-    } )
-
-</script> -->
-
- <!  div id="spacer" style="height:80%">
-
- </wrapper>
-
- </body>
-
-
- </html>
+  </html>
