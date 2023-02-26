@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <title>Blocks & Positions</title>
+<!-- CSS style -->  
+    <style>
+        .grey {position: sticky; 
+                margin: auto;
+                margin-bottom: 100px; 
+                margin-top: 100px;
+                width: 30%; 
+                top: 0; 
+                padding-bottom: 30%; 
+                background-color: #999999f3;
+                z-index: 80;}
+        .grid1 {position: relative; 
+                margin: auto;
+                width: 45%;
+                height: 300px; 
+                top: 0; 
+                padding-bottom: 12%;
+                z-index: 90;}
+        .grid2 {position: relative; 
+                margin: auto; 
+                width: 45%; 
+                height: 300px;
+                top: 0; 
+                padding-bottom: 12%;
+                z-index: 90;}
+        .grid3 {position: relative; 
+                margin: auto; 
+                width: 45%; 
+                height: 300px;
+                top: 0; 
+                padding-bottom: 9%;
+                z-index: 90;}
+        .menu {position: fixed; 
+                margin: auto;
+                overflow: hidden;
+                top: 0;
+                z-index: 100;
+                width: 100%;
+                height: 5%;
+                padding-bottom: 10px;
+                background-color: rgb(46, 45, 45);}
+        .menu a {display: inline-block;
+                text-align: left;
+                padding: 19px 16px 0 24px;
+                text-decoration: none;
+                font-size: 17px;
+                font-family: 'Source Code Pro', monospace;
+                color:rgb(255, 255, 255);}
+        .menu a:hover {background-color: rgb(117, 149, 280); 
+                        color: rgb(0, 0, 0);}
+        .menu a:active {background-color: rgb(117, 149, 280); 
+                        color:rgb(0, 0, 0);}
+        .text {text-align: center;
+                font-size: 20px;
+                font-family: 'Source Code Pro', monospace;
+                background-color: rgba(253, 253, 253, 0);
+                line-height: 200%;}
+        .center {display: block;
+                margin-left: auto;
+                margin-right: auto;}
+        .arrow {font-size: 80px; 
+                color: rgb(117, 149, 280);}
+        .highlight {display: inline;
+                    padding: 5px; 
+                    background-color: #999999; }
+        .hello {position: absolute;
+                    text-align: center;
+                    font-size: 27px;
+                    font-family: 'Source Code Pro', monospace;
+                    top: 75px;
+                    right: 0;
+                    width: 210px;
+                    height: 35px;
+                    border: 3px solid rgb(117, 149, 280);}
+    </style>
+</head>
+
+<body>
+
+<!-- Menu -->  
+   <div class="menu">
+        <nav>
+            <a href="#start"> Start </a>
+            <a href="#grid1"> Grid #1 </a>
+            <a href="#grid2"> Grid #2 </a>
+            <a href="#grid3"> Split-View </a>
+        </nav>
+    </div>
+
+<!-- Hello message -->   
+    <div id="start" class="hello"> Hello User! </div>
+
+<!-- Grey block --> 
+    <div id="grey" class="grey"></div>
+
+    <!-- Text for color block -->
+        <p class="text"> 
+        This is a <span class="highlight">grey (#999999)</span> colored block. Scroll for a surprise . . .
+        </p>
+        <br><br><br><br><br><br>
+
+<!-- Grid 1 --> 
+    <div id="grid1" class="grid1">
+        <img src="gridBlack.png" height="550px" width="445px" class="center">
+    </div>
+    <br><br><br><br><br><br>
+
+    <!-- Text for grid1 -->
+        <p class="text"> 
+            The block attached to the top of the screen will remain the same color<br> 
+            all the way through while scrolling . . .
+        <br><br><br><br>
+
+        <!-- First arrow -->
+            <span class="arrow"> &#11015; </span>
+            </p>
+            <br><br><br><br><br><br>
+
+<!-- Grid 2 --> 
+    <div id="grid2" class="grid2">
+        <img src="gridWhite.png" height="550px" width="445px" class="center">
+    </div>
+    <br><br><br><br><br><br>
+
+    <!-- Text for grid2 -->
+        <p class="text"> 
+            . . . However, it seems that the block is changing shades as it swaps grids.<br>
+            This is a replication of the Dungeon Illusion (Bressan, 2001).
+        <br><br><br><br>
+    
+        <!-- Middle arrow -->
+            <span class="arrow"> &#11015; </span>
+            </p>
+            <br><br><br><br>
+        <!-- Below spacing -->
+    
+    <!-- Top text for grid3 -->
+        <p class="text"> 
+            Here is a split-view of the 2 grids for more convenient viewing:
+        </p>
+        <br><br><br><br><br>
+
+<!-- Grid 3 -->
+    <div id="grid3" class="grid3">
+        <img src="gridBoth.png" height="350x" width="445px" class="center">
+    </div>
+    
+    <!-- Bottom text for grid3 -->
+        <p class="text"> 
+            Isn't that cool? It appears as though there are really two seperate colors.
+        </p>
+        <br><br><br><br><br>
+
+</body>
+</html>
