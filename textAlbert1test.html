@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sono&display=swap" rel="stylesheet">
+    <style>
+    .skills, .langs {
+        font-family: 'Sono', sans-serif;
+        font-variant-caps: all-small-caps;
+        /* -webkit-font-smoothing:antialiased; */
+        /* font-size:2vw; */
+        font-size: min(max(16px, 2vw), 22px);
+        letter-spacing: 0.2em;
+        display: inline-block;
+        position: absolute;
+        top: 55%;
+        white-space: nowrap;
+        animation: floatText 255s infinite linear;
+        padding-left: 100%; /*Initial offset*/
+        color:#121020;
+    }
+
+    p {
+        /* transform: rotate(2deg); */
+    }
+
+    b {
+        color:blueviolet;
+        }
+
+    #square1 {
+        font-family: 'Sono', sans-serif;
+        font-variant-caps: all-small-caps;
+        position: absolute;
+        left: 12%;
+        font-size: 4vw;
+        font-weight: 200;
+        letter-spacing: 0.2em;
+        color: #60748f;
+        background-color: #9db2ff;
+        margin-bottom: 2%;
+        opacity: 1;
+        padding:.5%;
+        /* border-radius: 30%;  */
+}
+    #text1 {
+        position: absolute;
+        top: 1.7em;
+        left: 30%;
+        font-family: 'Sono', sans-serif;
+        font-weight: 200;
+        font-variant-caps: all-small-caps;
+        font-size: 8vw;
+        letter-spacing: 0.2em;
+        /* font-style: italic;  */
+        color: red;
+        /* background-color: #050550; */
+}
+
+        /* .langs {
+        animation-delay:5s;
+        } */
+
+        /* .skills:hover, .langs:hover  {
+        animation-play-state: paused;
+        } */
+
+    @keyframes floatText {
+        to {
+            transform: translateX(-100%);
+        }
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="skills">
+        <p>Everything that the human race has done and thought is concerned with the satisfaction of deeply felt needs and the assuagement of pain. &nbsp;&nbsp; &#9728; <b> One has to keep this constantly in mind</b> if one wishes to understand spiritual movements and their development. &nbsp;&nbsp; &#9728; <b> Feeling and longing are the motive force</b> behind all human endeavor and human creation, in however exalted a guise the latter may present themselves to us. &nbsp;&nbsp; &#9728; <b>Now what are the feelings and needs</b>  that have led men to religious thought and belief in the widest sense of the words?  &nbsp;&nbsp; &#9728; <b>A little consideration</b> will suffice to show us that the most varying emotions preside over the birth of religious thought and experience.&nbsp;&nbsp; &#9728; <b>With primitive man it is above all fear</b> that evokes religious notions - fear of hunger, wild beasts, sickness, death.&nbsp;&nbsp; &#9728; <b>Since</b> at this stage of existence understanding of causal connections is usually poorly developed, the human mind creates illusory beings more or less analogous to itself on whose wills and actions these fearful happenings depend.&nbsp;&nbsp; &#9728; <b>Thus</b> one tries to secure the favor of these beings by carrying out actions and offering sacrifices which, according to the tradition handed down from generation to generation, propitiate them or make them well disposed toward a mortal.&nbsp;&nbsp; &#9728; <b>In this sense I am speaking of a religion of fear.&nbsp;&nbsp; &#9728; <b>This,</b> though not created, is in an important degree stabilized by the formation of a special priestly caste which sets itself up as a mediator between the people and the beings they fear, and erects a hegemony on this basis.&nbsp;&nbsp; &#9728; <b>In many cases a leader or ruler or a privileged class</b> whose position rests on other factors combines priestly functions with its secular authority in order to make the latter more secure; or the political rulers and the priestly caste make common cause in their own interests. &nbsp;&nbsp;  Albert Einstein</p>
+      </div>
+      <div class="langs">
+
+      </div>
+      <!-- <div id="circle1"> </div><br><br><br><br><br><br><br><br> -->
+      <div class="col-sm-4" id="square1"> </div>
+      <div class="col-sm-4" id="text1"> </div>
+  
+    <!-- </div> -->
+    <!-- </div> -->
+  
+  <script>
+  // text for splitting into array //
+  var wordsString = "Everything that the human race has done and thought is concerned with the satisfaction of deeply felt needs and the assuagement of pain. One has to keep this constantly in mind if one wishes to understand spiritual movements and their development. Feeling and longing are the motive force behind all human endeavor and human creation, in however exalted a guise the latter may present themselves to us. Now what are the feelings and needs that have led men to religious thought and belief in the widest sense of the words? A little consideration will suffice to show us that the most varying emotions preside over the birth of religious thought and experience. With primitive man it is above all fear that evokes religious notions - fear of hunger, wild beasts, sickness, death. Since at this stage of existence understanding of causal connections is usually poorly developed, the human mind creates illusory beings more or less analogous to itself on whose wills and actions these fearful happenings depend. Thus one tries to secure the favor of these beings by carrying out actions and offering sacrifices which, according to the tradition handed down from generation to generation, propitiate them or make them well disposed toward a mortal. In this sense I am speaking of a religion of fear. This, though not created, is in an important degree stabilized by the formation of a special priestly caste which sets itself up as a mediator between the people and the beings they fear, and erects a hegemony on this basis. In many cases a leader or ruler or a privileged class whose position rests on other factors combines priestly functions with its secular authority in order to make the latter more secure; or the political rulers and the priestly caste make common cause in their own interests. " ;
+  var wordsString2 = "human race  thought  concerned  satisfaction  needs  pain  understand  spiritual  development  Feeling  longing  motive  force  endeavor  creation  religious thought  belief  sense  words?  birth  experience  primitive  fear  evokes  hunger  sickness  death  existence  mind  analogous  actions  sacrifices  tradition  generation  propitiate  mortal  speaking  fear  degree  stabilized  beings  erects  hegemony  leader  ruler  privileged  class  secular  secure  political  common  cause  interests" ;
+    
+  // var for string split. and pattern for splitting. //
+  var wordsArray = wordsString.split(" ");
+  var wordsArray2 = wordsString2.split("  " );
+  var wordsArray3 = wordsString.split(" and ");
+  var getRandomWord = function() {
+    return wordsArray[Math.floor(Math.random(0,1) * wordsArray.length)]; };
+  var getRandomWord2 = function() {
+    return wordsArray2[Math.floor(Math.random(0,.5) * wordsArray2.length)]; };
+  var getRandomWord3 = function() {
+    return wordsArray3[Math.floor(Math.random() * wordsArray3.length)];
+  }; 
+  $(function() { // after page load
+    setInterval(function(){
+      $('#square1' ).fadeOut(0, function(){
+        $(this).html(getRandomWord2()).fadeIn(0);
+      });
+    // 5 seconds
+    }, 500);
+  });
+  $(function() { // after page load
+    setInterval(function(){
+      $('#text1' ).fadeOut(0, function(){
+        $(this).html(getRandomWord()).fadeIn(0);
+      });
+    // 5 seconds
+    }, 4000);
+  });
+  $(function() { // after page load
+    setInterval(function(){
+      $('#circle1' ).fadeOut(0, function(){
+        $(this).html(getRandomWord3()).fadeIn(0);
+      });
+    // 5 seconds
+    }, 3000);
+  });
+  </script>
+    
+</body>
+</html>
+
