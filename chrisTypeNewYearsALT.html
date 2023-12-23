@@ -33,9 +33,9 @@
       font-size: 20px;
       color: white ;
       display: inline;
-      padding-left: 13px;
+      padding: 3px 0 0 13px ;
       position: absolute;
-      left: -250px;
+      left: -850px;
       top: -10px;
       background: black;
       animation: slide  .25s forwards;
@@ -49,7 +49,7 @@
       padding-left: 13px;
       padding-top: 40px;
       position: absolute;
-      left: -350px;
+      left: -850px;
       top: -10px;
       background: rgba(20, 100, 200, .5);
       animation: slide  2s forwards;
@@ -57,16 +57,16 @@
     }
     p.time3 {
       font-family: "Lucida Grande", "Lucida Sans Unicode",sans-serif;
-      font-size: 20px;
+      font-size: 36px;
       color: white ;
       display: inline;
       padding-left: 13px;
       position: absolute;
-
-      left: -430px;
-      top: 280px;
-      background: rgb(99, 75, 80);
-      animation: slide  9s forwards;
+      z-index: 50;
+      left: -700px;
+      top: 260px;
+      background: rgb(101, 184, 205);
+      animation: slide  6s forwards;
        /* animation: fadein 30s; */
     }
     p.time4 {
@@ -75,11 +75,12 @@
       color: white ;
       display: inline;
       padding-left: 13px;
+      padding-top: 40px;
       position: absolute;
-      left: -350px;
-      top: 310px;
+      left: -700px;
+      top: 280px;
       background: black;
-      animation: slide  12s forwards;
+      animation: slide  9s forwards;
           /* animation-delay: 0s;   */
     }
     @keyframes slide  {
@@ -90,32 +91,33 @@
         transform: translateX(1500px);
       }
     }
-    @media(min-width:300px ) {
+    @media(max-width:600px ) {
       p.time3 {
       font-family: "Lucida Grande", "Lucida Sans Unicode",sans-serif;
-      font-size: 3em;
+      font-size: 2em;
       color: white ;
       display: inline;
-      padding-left: 13px;
+      padding: 3px 3px 4px 14px ;
       position: absolute;
+      z-index: 25;
 
-      left: -430px;
-      top: 280px;
-      background: rgb(99, 75, 80);
-      animation: slide  6s forwards;
+      left: -330px;
+      top: 220px;
+      background: rgb(170, 13, 249);
+      animation: slide  2s forwards;
        /* animation: fadein 30s; */
     }
     p.time4 {
       font-family: "Lucida Grande", "Lucida Sans Unicode",sans-serif;
-      font-size: 4.5em;
+      font-size: 2em;
       color: white ;
       display: inline;
-      padding: 3px 3px 4px 6px ;
+      padding: 43px 3px 4px 6px ;
       position: absolute;
       left: -350px;
-      top: 360px;
-      background: black;
-      animation: slide  8s forwards;
+      top: 220px;
+      background: rgb(181, 205, 0);
+      animation: slide  12s forwards;
           /* animation-delay: 0s;   */
     }
       @keyframes slide  {
@@ -123,7 +125,7 @@
         transform: translateX(-100px);
       }
       100% {
-        transform: translateX(500px);
+        transform: translateX(400px);
       }
     }
 
@@ -137,14 +139,14 @@
 
     div.happy {
       position: fixed;
-      top: 200px;
+      top: 400px;
       padding-left: 403px;
       /* animation: fadein 12s; */
 
     }
     .div1 {
       position: relative;
-      top: 900px;
+      top: 1300px;
 
     }
 
@@ -196,8 +198,8 @@
 <div class="happy">
     <p class="time1">time. &nbsp &nbsp &nbsp</p>
     <p class="time2"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp flies.  </p>
-    <p class="time3"> &nbsp &nbsp &nbsp happy. <br></p>
-    <p class="time4">&nbsp &nbsp &nbsp new year.   &nbsp &nbsp &nbsp</p>
+    <p class="time3"> &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp happy.&nbsp &nbsp &nbsp  <br></p>
+    <p class="time4"> &nbsp &nbsp &nbsp new year.   &nbsp &nbsp &nbsp</p>
 </div>
 </div>
 </body>
